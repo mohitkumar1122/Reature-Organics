@@ -239,7 +239,7 @@ export default function Footer() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <span className="text-gray-400 leading-relaxed pt-1">
-                  108, Sacred Herbs Marg, DLF Phase 3, Gurugram, Haryana - 122002
+                  Agra- Mathura Bypass Road, in front of Rehmatpur Garmai, near Kamalpur, Chauraha, Aligarh, Kamalpur, Uttar Pradesh 202001
                 </span>
               </li>
               <li>
@@ -252,7 +252,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-[11px] text-gray-500 uppercase tracking-wider">Call Us</p>
-                    <p className="text-gray-300 group-hover:text-secondary font-semibold">+91 98765 43210</p>
+                    <p className="text-gray-300 group-hover:text-secondary font-semibold">+91 080067 62121</p>
                   </div>
                 </a>
               </li>
@@ -267,7 +267,7 @@ export default function Footer() {
                   <div>
                     <p className="text-[11px] text-gray-500 uppercase tracking-wider">Email</p>
                     <p className="text-gray-300 group-hover:text-secondary font-semibold text-xs">
-                      support@reatureorganic.com
+                      Care@Reature.In
                     </p>
                   </div>
                 </a>
