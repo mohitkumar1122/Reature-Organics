@@ -22,14 +22,14 @@ interface PageProps {
 }
 
 export const metadata = {
-  title: "Herbal Shop",
-  description: "Browse organic Ayurvedic medicines, natural supplements, health boosters, skin care, and wellness devices with advanced filtering.",
+  title: "Herbal Shop | ReaTure Organic",
+  description:
+    "Browse organic Ayurvedic medicines, natural supplements, health boosters, skin care, and wellness devices with advanced filtering.",
 };
 
 export default async function ShopPage({ searchParams }: PageProps) {
   await dbConnect();
-  
-  // Await searchParams in Next.js 15
+
   const params = await searchParams;
 
   const page = parseInt(params.page || "1", 10);
@@ -38,7 +38,6 @@ export default async function ShopPage({ searchParams }: PageProps) {
   const rating = params.rating ? parseFloat(params.rating) : undefined;
   const inStock = params.inStock === "true";
 
-  // Execute query action
   const { products, totalPages, currentPage, totalCount } = await getProductsAction({
     category: params.category,
     brand: params.brand,
@@ -50,14 +49,22 @@ export default async function ShopPage({ searchParams }: PageProps) {
     sort: params.sort,
     search: params.search,
     page,
-    limit: 9, // 9 items per page for catalog grids
+    limit: 9,
   });
 
-  // Load distinct filters from database
   const categories = await getCategoriesAction();
   const brands = await Product.distinct("brand");
-  
-  const healthConditions = ["Diabetes", "Immunity", "Hair Fall", "Skin Care", "Weight Management"];
+
+  const healthConditions = [
+    "Diabetes",
+    "Immunity",
+    "Hair Fall",
+    "Skin Care",
+    "Weight Management",
+    "Digestive Health",
+    "Joint Care",
+    "Sleep & Stress",
+  ];
 
   return (
     <ShopClient

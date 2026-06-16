@@ -1,19 +1,28 @@
 import React, { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 
+// Body Font - Modern, Clean, Highly Readable
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  preload: true,
 });
 
-const playfair = Playfair_Display({
+// Heading Font - Premium Editorial Serif with Beautiful Italics
+const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -34,13 +43,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://reatureorganic.com",
-    siteName: "Reature Organic",
+    siteName: "ReaTure Organic",
     images: [
       {
         url: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200&h=630",
         width: 1200,
         height: 630,
-        alt: "Reature Organic - Pure Ayurvedic Wellness",
+        alt: "ReaTure Organic - Pure Ayurvedic Wellness",
       },
     ],
   },
@@ -62,13 +71,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col bg-[#F8FAF7] text-[#1A1A1A]">
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable}`}
+    >
+      <body className="antialiased min-h-screen flex flex-col bg-lightBg text-darkText font-sans">
         <CartProvider>
-          <Suspense fallback={<div className="h-20 bg-white border-b border-gray-100" />}>
+          <Suspense
+            fallback={
+              <div className="h-20 bg-white border-b border-gray-100" />
+            }
+          >
             <Navbar />
           </Suspense>
-          <main className="flex-grow pt-20 md:pt-24">{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </CartProvider>
       </body>

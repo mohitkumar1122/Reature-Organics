@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -11,7 +12,6 @@ export default function CountdownTimer() {
   });
 
   useEffect(() => {
-    // Generate a moving end date that always ends exactly 2 days and 5 hours from the user's current session start.
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 2);
     targetDate.setHours(targetDate.getHours() + 5);
@@ -41,31 +41,50 @@ export default function CountdownTimer() {
 
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 
+  const timeUnits = [
+    { value: timeLeft.days, label: "Days" },
+    { value: timeLeft.hours, label: "Hours" },
+    { value: timeLeft.minutes, label: "Minutes" },
+    { value: timeLeft.seconds, label: "Seconds", highlight: true },
+  ];
+
   return (
-    <div className="flex gap-3 text-darkText font-mono">
-      <div className="flex flex-col items-center">
-        <span className="w-12 h-12 flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm text-lg font-bold text-primary">
-          {formatNumber(timeLeft.days)}
-        </span>
-        <span className="text-[10px] text-gray-500 uppercase mt-1 font-semibold tracking-wider">Days</span>
-      </div>
-      <div className="flex flex-col items-center">
-        <span className="w-12 h-12 flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm text-lg font-bold text-primary">
-          {formatNumber(timeLeft.hours)}
-        </span>
-        <span className="text-[10px] text-gray-500 uppercase mt-1 font-semibold tracking-wider">Hrs</span>
-      </div>
-      <div className="flex flex-col items-center">
-        <span className="w-12 h-12 flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm text-lg font-bold text-primary">
-          {formatNumber(timeLeft.minutes)}
-        </span>
-        <span className="text-[10px] text-gray-500 uppercase mt-1 font-semibold tracking-wider">Mins</span>
-      </div>
-      <div className="flex flex-col items-center">
-        <span className="w-12 h-12 flex items-center justify-center bg-white border border-gray-100 rounded-xl shadow-sm text-lg font-bold text-secondary">
-          {formatNumber(timeLeft.seconds)}
-        </span>
-        <span className="text-[10px] text-gray-500 uppercase mt-1 font-semibold tracking-wider">Secs</span>
+    <div className="inline-flex flex-col gap-3">
+      <span className="text-[11px] font-bold text-secondary uppercase tracking-widest flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+        Offer Ends In
+      </span>
+      <div className="flex gap-2 md:gap-3">
+        {timeUnits.map((unit, idx) => (
+          <React.Fragment key={unit.label}>
+            <div className="flex flex-col items-center">
+              <motion.div
+                key={unit.value}
+                initial={unit.highlight ? { scale: 1.1, opacity: 0.5 } : {}}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className={`relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl text-xl md:text-2xl font-bold font-mono shadow-large ${
+                  unit.highlight
+                    ? "bg-gradient-to-br from-secondary to-secondary-dark text-white"
+                    : "bg-white text-primary"
+                } overflow-hidden`}
+              >
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent" />
+                <span className="relative z-10 tabular-nums">{formatNumber(unit.value)}</span>
+                
+                {/* Bottom line divider effect */}
+                <div className="absolute left-0 right-0 top-1/2 h-px bg-black/5" />
+              </motion.div>
+              <span className="text-[10px] md:text-[11px] text-white/80 uppercase mt-2 font-bold tracking-wider">
+                {unit.label}
+              </span>
+            </div>
+            {idx < timeUnits.length - 1 && (
+              <span className="text-2xl md:text-3xl font-bold text-white/40 self-start mt-3 md:mt-4">:</span>
+            )}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );

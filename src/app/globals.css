@@ -2,44 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   ROOT VARIABLES
+   ============================================ */
 @layer base {
   :root {
     --background: 248 250 247; /* #F8FAF7 */
     --foreground: 26 26 26; /* #1A1A1A */
   }
-  
+
+  /* ============================================
+     HTML & BODY - Premium Font Foundation
+     ============================================ */
+  html {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: #F8FAF7;
     color: #1A1A1A;
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11", "kern";
+    font-optical-sizing: auto;
+  }
+
+  /* ============================================
+     HEADINGS - Fraunces with Premium Kerning
+     ============================================ */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif), Georgia, serif;
+    letter-spacing: -0.02em;
+    font-feature-settings: "ss01", "kern";
+  }
+
+  h1 {
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  h2 {
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  h3, h4 {
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* ============================================
+     ITALIC - Beautiful Fraunces Italics
+     ============================================ */
+  .italic,
+  em,
+  i {
+    font-style: italic;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  /* Heading italics use Fraunces serif */
+  h1.italic, h2.italic, h3.italic, h4.italic,
+  h1 .italic, h2 .italic, h3 .italic, h4 .italic,
+  h1 em, h2 em, h3 em, h4 em {
+    font-family: var(--font-serif), Georgia, serif;
+  }
+
+  /* ============================================
+     TABULAR NUMBERS (For Prices & Stats)
+     ============================================ */
+  .tabular-nums,
+  code,
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum", "zero";
+  }
+
+  /* ============================================
+     LINKS & FORMS
+     ============================================ */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+
+  /* ============================================
+     SELECTION COLOR
+     ============================================ */
+  ::selection {
+    background-color: #00843D;
+    color: #ffffff;
+  }
+
+  ::-moz-selection {
+    background-color: #00843D;
+    color: #ffffff;
+  }
+
+  /* ============================================
+     FOCUS STATES - Accessible & Branded
+     ============================================ */
+  :focus-visible {
+    outline: 2px solid #00843D;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-/* Glassmorphism utility */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.glass-dark {
-  background: rgba(26, 26, 26, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Premium card hover effects */
-.premium-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.premium-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(0, 132, 61, 0.15);
-}
-
-/* Custom Scrollbars */
+/* ============================================
+   CUSTOM SCROLLBARS (Your Original - Kept!)
+   ============================================ */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -55,7 +137,203 @@
   background: #8BC61F;
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00843D #F8FAF7;
+}
+
+/* ============================================
+   GLASSMORPHISM (Your Original - Kept!)
+   ============================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-dark {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   PREMIUM CARD HOVER (Your Original - Kept!)
+   ============================================ */
+.premium-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 132, 61, 0.15);
+}
+
+/* ============================================
+   CUSTOM UTILITIES (New Premium Additions)
+   ============================================ */
+@layer utilities {
+  /* Smart text wrapping */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Drop cap for blog content */
+  .drop-cap::first-letter {
+    font-family: var(--font-serif), Georgia, serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    float: left;
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
+    line-height: 0.9;
+    color: #00843D;
+    font-feature-settings: "ss01";
+  }
+
+  /* Premium gradient text */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #00843D 0%, #8BC61F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #8BC61F 0%, #00843D 50%, #00642E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* No tap highlight on mobile */
+  .no-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Fluid Typography (Auto-responsive headings) */
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+
+  .text-fluid-base {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+
+  .text-fluid-lg {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .text-fluid-xl {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .text-fluid-2xl {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .text-fluid-3xl {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .text-fluid-hero {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: 1.05;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
 }
