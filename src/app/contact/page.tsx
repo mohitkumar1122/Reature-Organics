@@ -43,18 +43,18 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      lines: ["+91 98765 43210", "+91 98765 43211"],
+      lines: ["1800-8908-121", "+91 8006762121"],
       sub: "Mon-Sat, 9 AM - 6 PM",
       color: "from-primary to-primary-dark",
-      action: "tel:+919876543210",
+      action: "tel:+1800-8908-121",
     },
     {
       icon: Mail,
       title: "Email Us",
-      lines: ["support@reatureorganic.com", "info@reatureorganic.com"],
+      lines: ["care@reature.in", "reatureorganics@gmail.com"],
       sub: "Reply within 24 hours",
       color: "from-secondary to-secondary-dark",
-      action: "mailto:support@reatureorganic.com",
+      action: "mailto:care@reature.in",
     },
     {
       icon: FaWhatsapp,
@@ -62,7 +62,7 @@ export default function ContactPage() {
       lines: ["Quick chat support"],
       sub: "Instant responses",
       color: "from-green-500 to-green-600",
-      action: "https://wa.me/919876543210",
+      action: "https://wa.me/8006762121",
     },
   ];
 
@@ -175,9 +175,7 @@ export default function ContactPage() {
                     Registered Office
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    108, Sacred Herbs Marg,<br />
-                    DLF Phase 3, Gurugram,<br />
-                    Haryana - 122002, India
+                    Agra -mathura Bypass Opposite,<br>Rahmatpur Garhmai(Near Kamalpur chauraha),<br>Aligarh 202002 UttarPradesh,<br> India.
                   </p>
                 </div>
 
@@ -338,7 +336,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           required
-                          placeholder="Jane Doe"
+                          placeholder="Hariom Singh"
                           value={formData.name}
                           onChange={(e) =>
                             setFormData({ ...formData, name: e.target.value })
@@ -353,7 +351,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           required
-                          placeholder="jane@example.com"
+                          placeholder="H ariom@example.com"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
@@ -370,7 +368,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="tel"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 8006762121"
                           value={formData.phone}
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
@@ -479,7 +477,7 @@ export default function ContactPage() {
               </div>
             </div>
             <a
-              href="https://maps.google.com/?q=DLF+Phase+3+Gurugram"
+              href="https://www.google.com/maps/place/ReaTure+Organics+Pvt+Ltd/@27.846224,78.105881,16z/data=!4m6!3m5!1s0x3974a3ba1f9ba727:0xc1af6086228036e9!8m2!3d27.8459547!4d78.110599!16s%2Fg%2F11mvwcnwbh?hl=en&entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-primary-light text-primary hover:bg-primary hover:text-white transition-all"
