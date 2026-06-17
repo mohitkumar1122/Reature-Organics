@@ -175,7 +175,10 @@ export default function ContactPage() {
                     Registered Office
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Agra -mathura Bypass Opposite,<br>Rahmatpur Garhmai(Near Kamalpur chauraha),<br>Aligarh 202002 UttarPradesh,<br> India.
+                    Agra-Mathura Bypass Opposite,<br />
+                    Rahmatpur Garhmai (Near Kamalpur Chauraha),<br />
+                    Aligarh 202002, Uttar Pradesh,<br />
+                    India.
                   </p>
                 </div>
 
