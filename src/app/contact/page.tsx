@@ -354,7 +354,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           required
-                          placeholder="H ariom@example.com"
+                          placeholder="Hariom@example.com"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
@@ -475,7 +475,10 @@ export default function ContactPage() {
                   Find Us On Map
                 </h3>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  108 Sacred Herbs Marg, DLF Phase 3, Gurugram
+                   Agra-Mathura Bypass Opposite,<br />
+                    Rahmatpur Garhmai (Near Kamalpur Chauraha),<br />
+                    Aligarh 202002, Uttar Pradesh,<br />
+                    India.
                 </p>
               </div>
             </div>
@@ -491,7 +494,7 @@ export default function ContactPage() {
           </div>
           <div className="h-72 md:h-96 w-full relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14030.57962489622!2d77.08639209594689!3d28.4901614745864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1937ceea17db%3A0xea89a0ebf49e0b12!2sDLF%20Phase%203%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/place/ReaTure+Organics+Pvt+Ltd/@27.8459594,78.1080241,17z/data=!3m1!4b1!4m6!3m5!1s0x3974a3ba1f9ba727:0xc1af6086228036e9!8m2!3d27.8459547!4d78.110599!16s%2Fg%2F11mvwcnwbh?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D"
               className="w-full h-full border-none grayscale-[0.3] hover:grayscale-0 transition-all duration-500"
               allowFullScreen={false}
               loading="lazy"
