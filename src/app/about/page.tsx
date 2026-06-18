@@ -216,8 +216,8 @@ export default function AboutPage() {
 
             <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-large">
               <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800"
-                alt="Founder of ReaTure Organic"
+                src="	https://reature.in/images/CEO.png"
+                alt="Founder & CEO of ReaTure Organic"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-darkText/60 via-transparent to-transparent" />
@@ -247,9 +247,9 @@ export default function AboutPage() {
               Meet Our Leader
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
-              Dr. Vasudev <span className="text-primary italic">Shastri</span>
+              Yudhishthir <span className="text-primary italic">Singh</span>
             </h2>
-            <p className="text-sm text-primary font-semibold">Founder & Chief Formulator</p>
+            <p className="text-sm text-primary font-semibold">Founder & CEO</p>
 
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
               <p>
