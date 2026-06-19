@@ -253,10 +253,10 @@ export default function AboutPage() {
 
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
               <p>
-                Dr. Vasudev Shastri completed his post-graduation in Ayurvedic Pharmacology (Dravyaguna Vijnana) from the Gujarat Ayurved University, Jamnagar. Observing a lack of consistency and clinical purity in D2C wellness brands, he established ReaTure Organic in 2021.
+                YUDHISHTHIR SINGH, is a mordern-day business leader. His incredible 25 Years of Success journey, leadership and Clear vision have led him to become a global successful entrepreneur in Direct Selling industry. Helping others to become successful has been his mission exceedingly early his life.
               </p>
               <p>
-                Under his guidance, our research lab standardizes active constituents like Withanolides in Ashwagandha, Bacosides in Brahmi, and Guggulsterones in Guggul, ensuring every tablet provides exact biological doses.
+                He believes if you help people fulfill their dreams in reaturn, they will help you achieve your own. <stronge> YUDHISHTHIR SINGH's </stronge> successes can equally be measured by his determination and perseverance in life as well as his Quality work & ethic.
               </p>
             </div>
 
