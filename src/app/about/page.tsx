@@ -216,7 +216,7 @@ export default function AboutPage() {
 
             <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-large">
               <img
-                src="	https://reature.in/images/CEO.png"
+                src="	https://res.cloudinary.com/dvph5qzz9/image/upload/sir_ji_new_photo_rg1hpw"
                 alt="Founder & CEO of ReaTure Organic"
                 className="w-full h-full object-cover"
               />
