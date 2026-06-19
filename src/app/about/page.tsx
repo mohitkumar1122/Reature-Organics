@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import Link from "next/link";
 import {
   ShieldCheck, Heart, Leaf, Medal, Award, CheckCircle,
@@ -37,44 +37,44 @@ const metrics = [
   },
 ];
 
-  const values = [
-    {
-      icon: Leaf,
-      title: "Authentic Ingredients",
-      desc: "We source raw herbs exclusively from pesticide-free, organic vertical farms across specialized geographical tracts.",
-      gradient: "from-primary-light to-secondary-light",
-    },
-    {
-      icon: ShieldCheck,
-      title: "GMP Certification",
-      desc: "Every formulation is packed inside WHO-GMP certified, sterile laboratories, conforming strictly to dynamic pharmacopoeial benchmarks.",
-      gradient: "from-secondary-light to-primary-light",
-    },
-    {
-      icon: Heart,
-      title: "Biocompatible & Vegan",
-      desc: "100% plant-derived capsules, gluten-free, with zero synthetic binders, magnesium stearates, or chemical preservatives.",
-      gradient: "from-primary-light to-secondary-light",
-    },
-    {
-      icon: Microscope,
-      title: "Scientific Validation",
-      desc: "Each batch undergoes rigorous HPLC testing to standardize active alkaloid concentrations for guaranteed potency.",
-      gradient: "from-secondary-light to-primary-light",
-    },
-    {
-      icon: Globe,
-      title: "Sustainable Sourcing",
-      desc: "We partner with 500+ farmers across India to support sustainable, regenerative agricultural practices.",
-      gradient: "from-primary-light to-secondary-light",
-    },
-    {
-      icon: Award,
-      title: "Award Winning",
-      desc: "Recognized by leading wellness associations for our commitment to authenticity and clinical excellence.",
-      gradient: "from-secondary-light to-primary-light",
-    },
-  ];
+ const values = [
+  {
+    icon: Award,
+    title: "25+ Years of Success",
+    desc: "A remarkable journey of leadership, determination, and entrepreneurial excellence spanning over two decades.",
+    gradient: "from-primary-light to-secondary-light",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Visionary Leadership",
+    desc: "Leading with innovation, integrity, and a clear vision to create sustainable growth and opportunities.",
+    gradient: "from-secondary-light to-primary-light",
+  },
+  {
+    icon: Heart,
+    title: "Helping Others Succeed",
+    desc: "Dedicated to empowering individuals to achieve their dreams and build successful futures.",
+    gradient: "from-primary-light to-secondary-light",
+  },
+  {
+    icon: Globe,
+    title: "Global Business Impact",
+    desc: "Established a strong presence in the direct selling industry with a global outlook and growth mindset.",
+    gradient: "from-secondary-light to-primary-light",
+  },
+  {
+    icon: Users,
+    title: "People-Centric Approach",
+    desc: "Believes that when you help others grow, success naturally follows for everyone involved.",
+    gradient: "from-primary-light to-secondary-light",
+  },
+  {
+    icon: Trophy,
+    title: "Recognition & Excellence",
+    desc: "Known for perseverance, quality work ethics, and inspiring leadership across the industry.",
+    gradient: "from-secondary-light to-primary-light",
+  },
+];
 
   const timeline = [
     {
@@ -319,22 +319,22 @@ const metrics = [
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
+             {
                 icon: Target,
                 title: "Our Mission",
-                desc: "To make authentic Ayurvedic wellness accessible to every household through clinically validated, premium-quality natural formulations.",
+                desc: "To provide high-quality, natural healthcare products and business opportunities that empower individuals, families, and entrepreneurs to achieve healthier and more successful lives.",
                 color: "from-primary to-primary-dark",
               },
               {
                 icon: Eye,
                 title: "Our Vision",
-                desc: "To become India's most trusted Ayurvedic brand, empowering millions to live healthier, balanced lives through nature's wisdom.",
+                desc: "To become a globally trusted wellness and direct selling organization, bringing real and natural healthcare solutions to every household.",
                 color: "from-secondary to-secondary-dark",
               },
               {
                 icon: Heart,
                 title: "Our Promise",
-                desc: "Every product is crafted with integrity, transparency, and an unwavering commitment to your wellness journey.",
+                desc: "We are committed to delivering authentic, safe, and effective products with integrity, quality, and a people-first approach that builds trust and long-term relationships.",
                 color: "from-primary to-secondary",
               },
             ].map((item, i) => (
@@ -368,7 +368,7 @@ const metrics = [
             What Makes Us <span className="text-primary italic">Different</span>
           </h2>
           <p className="text-sm md:text-base text-gray-500 mt-4">
-            Our commitment to soil safety and quality sets our remedies apart from the rest.
+           Built on leadership, vision, perseverance, and a mission to help others achieve success.
           </p>
         </div>
 
