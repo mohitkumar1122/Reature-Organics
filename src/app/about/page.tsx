@@ -253,10 +253,10 @@ export default function AboutPage() {
 
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
               <p>
-                  YUDHISHTHIR SINGH, is a mordern-day business leader. His incredible 25 Years of Success journey, leadership and Clear vision have led him to become a global successful entrepreneur in Direct Selling industry. Helping others to become successful has been his mission exceedingly early his life.
+                   YUDHISHTHIR SINGH, is a mordern-day business leader. His incredible 25 Years of Success journey, leadership and Clear vision have led him to become a global successful entrepreneur in Direct Selling industry. Helping others to become successful has been his mission exceedingly early his life.
               </p>
               <p>
-                 He believes if you help people fulfill their dreams in reaturn, they will help you achieve your own. <stronge> YUDHISHTHIR SINGH's </stronge> successes can equally be measured by his determination and perseverance in life as well as his Quality work & ethic.
+                  He believes if you help people fulfill their dreams in reaturn, they will help you achieve your own. <stronge> YUDHISHTHIR SINGH's </stronge> successes can equally be measured by his determination and perseverance in life as well as his Quality work & ethic.
               </p>
             </div>
 
