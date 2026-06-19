@@ -14,12 +14,28 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  const metrics = [
-    { title: "10,000+", desc: "Happy Wellness Families", icon: Users },
-    { title: "100%", desc: "Clinically Verified Herbs", icon: ShieldCheck },
-    { title: "WHO-GMP", desc: "Certified Standard", icon: Award },
-    { title: "45+", desc: "Potent Formulations", icon: Microscope },
-  ];
+const metrics = [
+  {
+    title: "25+ Years",
+    desc: "Business Experience",
+    icon: Award,
+  },
+  {
+    title: "CEO & Founder",
+    desc: "Yudhishthir Singh",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Global Success",
+    desc: "Direct Selling Leader",
+    icon: Globe,
+  },
+  {
+    title: "Mission Driven",
+    desc: "Helping Others Succeed",
+    icon: BookOpen,
+  },
+];
 
   const values = [
     {
@@ -233,7 +249,7 @@ export default function AboutPage() {
 
             {/* Stats badge */}
             <div className="absolute top-6 right-6 bg-white p-4 rounded-2xl shadow-large border border-gray-100">
-              <p className="text-2xl font-bold text-primary font-serif">20+</p>
+              <p className="text-2xl font-bold text-primary font-serif">25+</p>
               <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">
                 Years Experience
               </p>
@@ -263,10 +279,10 @@ export default function AboutPage() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-                { icon: Microscope, label: "Clinical Research", value: "20+ Years" },
-                { icon: ShieldCheck, label: "Quality Standards", value: "WHO-GMP" },
-                { icon: Award, label: "Recognition", value: "15+ Awards" },
-                { icon: BookOpen, label: "Publications", value: "50+ Papers" },
+                 { icon: Award, label: "Business Experience", value: "25+ Years" },
+                 { icon: ShieldCheck, label: "CEO & Founder", value: "Visionary" },
+                 { icon: Award, label: "Direct Selling", value: "Global Leader" },
+                 { icon: BookOpen, label: "Empowering", value: "Entrepreneurs" },
               ].map((cred, i) => (
                 <div
                   key={i}
