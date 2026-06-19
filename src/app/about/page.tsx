@@ -73,7 +73,7 @@ const metrics = [
     title: "Recognition & Excellence",
     desc: "Known for perseverance, quality work ethics, and inspiring leadership across the industry.",
     gradient: "from-secondary-light to-primary-light",
-  },
+  }, 
 ];
 
   const timeline = [
