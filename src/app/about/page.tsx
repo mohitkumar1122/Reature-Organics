@@ -76,28 +76,51 @@ const values = [
   },
 ];
 
+const timeline = [
+  {
+    year: "2021",
+    title: "Company Foundation",
+    desc: "ReaTure was established in Aligarh, India, with a vision to provide authentic healthcare products and create life-changing business opportunities through direct selling.",
+  },
+  {
+    year: "2022",
+    title: "Product Development",
+    desc: "Expanded our portfolio with a range of wellness, nutrition, personal care, and Ayurvedic products designed to support healthier lifestyles.",
+  },
+  {
+    year: "2023",
+    title: "Growing Network",
+    desc: "Successfully built a strong community of leaders, distributors, and customers across multiple regions, empowering thousands through entrepreneurship.",
+  },
+  {
+    year: "2024",
+    title: "National Expansion",
+    desc: "Strengthened our presence across India by delivering quality products, trusted services, and innovative business solutions to households nationwide.",
+  },
+];
+
   const timeline = [
-    {
-      year: "2021",
-      title: "The Beginning",
-      desc: "Founded by Dr. Vasudev Shastri with a vision to bridge ancient Ayurveda with modern science.",
-    },
-    {
-      year: "2022",
-      title: "WHO-GMP Certification",
-      desc: "Achieved WHO-GMP certification for our state-of-the-art manufacturing facility in Gujarat.",
-    },
-    {
-      year: "2023",
-      title: "100+ Formulations",
-      desc: "Launched 100+ clinically validated formulations targeting comprehensive wellness conditions.",
-    },
-    {
-      year: "2024",
-      title: "Global Recognition",
-      desc: "Expanded operations to serve 10,000+ families globally with premium Ayurvedic remedies.",
-    },
-  ];
+  {
+    year: "2021",
+    title: "Company Foundation",
+    desc: "ReaTure was established in Aligarh, India, with a vision to provide authentic healthcare products and create life-changing business opportunities through direct selling.",
+  },
+  {
+    year: "2022",
+    title: "Product Development",
+    desc: "Expanded our portfolio with a range of wellness, nutrition, personal care, and Ayurvedic products designed to support healthier lifestyles.",
+  },
+  {
+    year: "2023",
+    title: "Growing Network",
+    desc: "Successfully built a strong community of leaders, distributors, and customers across multiple regions, empowering thousands through entrepreneurship.",
+  },
+  {
+    year: "2024",
+    title: "National Expansion",
+    desc: "Strengthened our presence across India by delivering quality products, trusted services, and innovative business solutions to households nationwide.",
+  },
+];
 
   const team = [
     {
