@@ -319,24 +319,24 @@ const values = [
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-            {
-              icon: Target,
-              title: "Our Mission",
-              desc: "To provide high-quality, natural healthcare products and meaningful business opportunities that empower individuals and families to lead healthier, happier, and more successful lives.",
-              color: "from-primary to-primary-dark",
-            },
-            {
-              icon: Eye,
-              title: "Our Vision",
-              desc: "To become a globally trusted wellness and direct-selling organization by bringing real, natural, and innovative healthcare solutions to every household.",
-              color: "from-secondary to-secondary-dark",
-            },
-            {
-              icon: Heart,
-              title: "Our Promise",
-              desc: "We are committed to delivering authentic products, uncompromising quality, and complete customer satisfaction through integrity, transparency, and trust.",
-              color: "from-primary to-secondary",
-            },
+             {
+                icon: Target,
+                title: "Our Mission",
+                desc: "To provide high-quality, natural healthcare products and meaningful business opportunities that empower individuals and families to lead healthier, happier, and more successful lives.",
+                color: "from-green-700 to-green-900",
+              },
+              {
+                icon: Eye,
+                title: "Our Vision",
+                desc: "To become a globally trusted wellness and direct-selling organization by bringing real, natural, and innovative healthcare solutions to every household.",
+                color: "from-lime-600 to-green-700",
+              },
+              {
+                icon: Heart,
+                title: "Our Promise",
+                desc: "We are committed to delivering authentic products, uncompromising quality, and complete customer satisfaction through integrity, transparency, and trust.",
+                color: "from-green-600 to-lime-600",
+              },
 
             ].map((item, i) => (
               <div
