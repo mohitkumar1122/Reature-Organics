@@ -94,7 +94,7 @@ const timeline = [
   },
   {
     year: "2024",
-    title: "National Expansion",
+    title: "National Expansion", 
     desc: "Strengthened our presence across India by delivering quality products, trusted services, and innovative business solutions to households nationwide.",
   },
 ];
