@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -215,10 +215,30 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-4 gap-3">
                 {[
-                  { Icon: FaFacebookF, color: "bg-[#1877F2]", label: "Facebook" },
-                  { Icon: FaInstagram, color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]", label: "Instagram" },
-                  { Icon: FaXTwitter, color: "bg-darkText", label: "Twitter" },
-                  { Icon: FaYoutube, color: "bg-[#FF0000]", label: "YouTube" },
+                {
+                  Icon: FaFacebookF,
+                  color: "bg-[#1877F2]",
+                  label: "Facebook",
+                  url: "https://facebook.com/yourpage"
+               },
+               {
+                  Icon: FaInstagram,
+                  color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]",
+                  label: "Instagram",
+                  url: "https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA=="
+               },
+               {
+                  Icon: FaXTwitter,
+                  color: "bg-darkText",
+                  label: "Twitter",
+                  url: "https://x.com/yourpage"
+              },
+              {
+                  Icon: FaYoutube,
+                  color: "bg-[#FF0000]",
+                  label: "YouTube",
+                  url: "https://youtube.com/@yourchannel"
+              },
                 ].map((social, i) => (
                   <a
                     key={i}
