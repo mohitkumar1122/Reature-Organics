@@ -514,8 +514,9 @@ export default function ContactPage() {
           </div>
           <div className="h-72 md:h-96 w-full relative">
             <iframe
-              src="https://www.google.com/maps/place/ReaTure+Organics+Pvt+Ltd/@27.8459594,78.1080241,17z/data=!3m1!4b1!4m6!3m5!1s0x3974a3ba1f9ba727:0xc1af6086228036e9!8m2!3d27.8459547!4d78.110599!16s%2Fg%2F11mvwcnwbh?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D"
-              className="w-full h-full border-none grayscale-[0.3] hover:grayscale-0 transition-all duration-500"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.81638958061!2d78.1083053150651!3d27.846181682734674!2m3!1f0!2f0!3f0!
+              3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a3ba1f9ba727%3A0xc1af6086228036e9!2sReaTure%20
+              Organics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1627294172235!5m2!1sen!2sin"
               allowFullScreen={false}
               loading="lazy"
             />
