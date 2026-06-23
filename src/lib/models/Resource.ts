@@ -5,7 +5,7 @@ export interface IResource extends Document {
   description: string;
   fileUrl?: string; // For PDFs
   videoUrl?: string; // For YouTube or tutorial links
-  category: "Brochure" | "Catalog" | "User Guide" | "Tutorial";
+  category: "Brochure" | "Business Plan" | "User Guide" | "Tutorial";
   type: "pdf" | "video";
   createdAt: Date;
   updatedAt: Date;
