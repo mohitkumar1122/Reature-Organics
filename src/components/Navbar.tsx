@@ -84,7 +84,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">
               <Truck className="w-3.5 h-3.5 text-secondary" />
-              Free Shipping on Orders Above ₹500
+              Free Shipping on Orders Above ₹5000
             </span>
             <span className="flex items-center gap-1.5">
               <Leaf className="w-3.5 h-3.5 text-secondary" />
@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a href="tel:+919876543210" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
               <Phone className="w-3.5 h-3.5" />
-              +91 98765 43210
+              + 1800-8908-121
             </a>
             <Link href="/track-order" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
               <Package className="w-3.5 h-3.5" />
