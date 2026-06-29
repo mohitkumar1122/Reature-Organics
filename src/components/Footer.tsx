@@ -31,7 +31,7 @@ export default function Footer() {
   };
 
   const trustFeatures = [
-    { icon: Truck, title: "Free Shipping", desc: "On orders above ₹500" },
+    { icon: Truck, title: "Free Shipping", desc: "On orders above ₹5000" },
     { icon: RefreshCw, title: "Easy Returns", desc: "7-day return policy" },
     { icon: Lock, title: "Secure Payment", desc: "100% protected" },
     { icon: Award, title: "Premium Quality", desc: "GMP certified" },
@@ -244,7 +244,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+1800-8908-121"
                   className="flex items-center gap-3 group hover:text-secondary transition-colors"
                 >
                   <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary/10 transition-colors">
