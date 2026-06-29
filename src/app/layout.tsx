@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://reatureorganic.com",
-    siteName: "ReaTure Organic",
+    siteName: "ReaTure Organic Pvt Ltd",
     images: [
       {
         url: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200&h=630",
