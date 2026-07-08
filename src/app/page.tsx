@@ -365,7 +365,7 @@ export default async function HomePage() {
               href="https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA%3D%3D"
               target="_blank"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-primary text-sm font-bold hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg"
-            >
+            
               <FaInstagram className="w-4 h-4" />
               Follow on Instagram
             </Link>
