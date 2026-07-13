@@ -226,7 +226,7 @@ export default function OrdersAdminClient({ orders }: OrdersAdminClientProps) {
                     {new Date(order.createdAt).toLocaleDateString()}
                   </td>
                   <td className="p-4 text-right font-bold text-primary">
-                    Rs. {order.totalAmount}
+                    ₹{order.totalAmount}
                   </td>
                   <td className="p-4 text-center">
                     <span

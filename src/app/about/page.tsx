@@ -14,90 +14,74 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-const metrics = [
-  {
-    title: "25+ Years",
-    desc: "Business Experience",
-    icon: Award,
-  },
-  {
-    title: "CEO & Founder",
-    desc: "Yudhishthir Singh",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Global Success",
-    desc: "Direct Selling Leader",
-    icon: Globe,
-  },
-  {
-    title: "Mission Driven",
-    desc: "Helping Others Succeed",
-    icon: BookOpen,
-  },
-];
+  const metrics = [
+    { title: "10,000+", desc: "Happy Wellness Families", icon: Users },
+    { title: "100%", desc: "Clinically Verified Herbs", icon: ShieldCheck },
+    { title: "WHO-GMP", desc: "Certified Standard", icon: Award },
+    { title: "45+", desc: "Potent Formulations", icon: Microscope },
+  ];
 
-const values = [
-  {
-    icon: Target,
-    title: "Our Mission",
-    desc: "To provide high-quality healthcare and wellness products while creating meaningful business opportunities that help people achieve better health, financial growth, and personal success.",
-    gradient: "from-primary-light to-secondary-light",
-  },
-  {
-    icon: Eye,
-    title: "Our Vision",
-    desc: "To become India's most trusted wellness and direct-selling organization by bringing authentic, natural, and innovative healthcare solutions to every household.",
-    gradient: "from-secondary-light to-primary-light",
-  },
-  {
-    icon: Heart,
-    title: "Our Promise",
-    desc: "We are committed to delivering genuine products, uncompromising quality, transparency, and complete customer satisfaction through ethical business practices.",
-    gradient: "from-primary-light to-secondary-light",
-  },
-  {
-    icon: Leaf,
-    title: "Real + Nature",
-    desc: "Every ReaTure product is inspired by nature and developed with carefully selected ingredients to support a healthier and more balanced lifestyle.",
-    gradient: "from-secondary-light to-primary-light",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality Assurance",
-    desc: "Our products are manufactured under strict quality standards and undergo rigorous testing to ensure safety, purity, and effectiveness.",
-    gradient: "from-primary-light to-secondary-light",
-  },
-  {
-    icon: Award,
-    title: "Leadership Excellence",
-    desc: "Driven by visionary leadership and years of industry experience, ReaTure continues to empower individuals through wellness and entrepreneurship.",
-    gradient: "from-secondary-light to-primary-light",
-  },
-];
+  const values = [
+    {
+      icon: Leaf,
+      title: "Authentic Ingredients",
+      desc: "We source raw herbs exclusively from pesticide-free, organic vertical farms across specialized geographical tracts.",
+      gradient: "from-primary-light to-secondary-light",
+    },
+    {
+      icon: ShieldCheck,
+      title: "GMP Certification",
+      desc: "Every formulation is packed inside WHO-GMP certified, sterile laboratories, conforming strictly to dynamic pharmacopoeial benchmarks.",
+      gradient: "from-secondary-light to-primary-light",
+    },
+    {
+      icon: Heart,
+      title: "Biocompatible & Vegan",
+      desc: "100% plant-derived capsules, gluten-free, with zero synthetic binders, magnesium stearates, or chemical preservatives.",
+      gradient: "from-primary-light to-secondary-light",
+    },
+    {
+      icon: Microscope,
+      title: "Scientific Validation",
+      desc: "Each batch undergoes rigorous HPLC testing to standardize active alkaloid concentrations for guaranteed potency.",
+      gradient: "from-secondary-light to-primary-light",
+    },
+    {
+      icon: Globe,
+      title: "Sustainable Sourcing",
+      desc: "We partner with 500+ farmers across India to support sustainable, regenerative agricultural practices.",
+      gradient: "from-primary-light to-secondary-light",
+    },
+    {
+      icon: Award,
+      title: "Award Winning",
+      desc: "Recognized by leading wellness associations for our commitment to authenticity and clinical excellence.",
+      gradient: "from-secondary-light to-primary-light",
+    },
+  ];
 
-const timeline = [
-  {
-    year: "2021",
-    title: "Company Foundation",
-    desc: "ReaTure was established in Aligarh, India, with a vision to provide authentic healthcare products and create life-changing business opportunities through direct selling.",
-  },
-  {
-    year: "2022",
-    title: "Product Development",
-    desc: "Expanded our portfolio with a range of wellness, nutrition, personal care, and Ayurvedic products designed to support healthier lifestyles.",
-  },
-  {
-    year: "2023",
-    title: "Growing Network",
-    desc: "Successfully built a strong community of leaders, distributors, and customers across multiple regions, empowering thousands through entrepreneurship.",
-  },
-  {
-    year: "2024",
-    title: "National Expansion", 
-    desc: "Strengthened our presence across India by delivering quality products, trusted services, and innovative business solutions to households nationwide.",
-  },
-];
+  const timeline = [
+    {
+      year: "2021",
+      title: "The Beginning",
+      desc: "Founded by Dr. Vasudev Shastri with a vision to bridge ancient Ayurveda with modern science.",
+    },
+    {
+      year: "2022",
+      title: "WHO-GMP Certification",
+      desc: "Achieved WHO-GMP certification for our state-of-the-art manufacturing facility in Gujarat.",
+    },
+    {
+      year: "2023",
+      title: "100+ Formulations",
+      desc: "Launched 100+ clinically validated formulations targeting comprehensive wellness conditions.",
+    },
+    {
+      year: "2024",
+      title: "Global Recognition",
+      desc: "Expanded operations to serve 10,000+ families globally with premium Ayurvedic remedies.",
+    },
+  ];
 
   const team = [
     {
@@ -232,8 +216,8 @@ const timeline = [
 
             <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-large">
               <img
-                src="	https://res.cloudinary.com/dvph5qzz9/image/upload/sir_ji_new_photo_rg1hpw"
-                alt="Founder & CEO of ReaTure Organic"
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800"
+                alt="Founder of ReaTure Organic"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-darkText/60 via-transparent to-transparent" />
@@ -249,7 +233,7 @@ const timeline = [
 
             {/* Stats badge */}
             <div className="absolute top-6 right-6 bg-white p-4 rounded-2xl shadow-large border border-gray-100">
-              <p className="text-2xl font-bold text-primary font-serif">25+</p>
+              <p className="text-2xl font-bold text-primary font-serif">20+</p>
               <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">
                 Years Experience
               </p>
@@ -263,26 +247,26 @@ const timeline = [
               Meet Our Leader
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
-              Yudhishthir <span className="text-primary italic">Singh</span>
+              Dr. Vasudev <span className="text-primary italic">Shastri</span>
             </h2>
-            <p className="text-sm text-primary font-semibold">Founder & CEO</p>
+            <p className="text-sm text-primary font-semibold">Founder & Chief Formulator</p>
 
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
               <p>
-                   YUDHISHTHIR SINGH, is a mordern-day business leader. His incredible 25 Years of Success journey, leadership and Clear vision have led him to become a global successful entrepreneur in Direct Selling industry. Helping others to become successful has been his mission exceedingly early his life.
+                Dr. Vasudev Shastri completed his post-graduation in Ayurvedic Pharmacology (Dravyaguna Vijnana) from the Gujarat Ayurved University, Jamnagar. Observing a lack of consistency and clinical purity in D2C wellness brands, he established ReaTure Organic in 2021.
               </p>
               <p>
-                  He believes if you help people fulfill their dreams in reaturn, they will help you achieve your own.YUDHISHTHIR SINGH's successes can equally be measured by his determination and perseverance in life as well as his Quality work & ethic.
+                Under his guidance, our research lab standardizes active constituents like Withanolides in Ashwagandha, Bacosides in Brahmi, and Guggulsterones in Guggul, ensuring every tablet provides exact biological doses.
               </p>
             </div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-                 { icon: Award, label: "Business Experience", value: "25+ Years" },
-                 { icon: ShieldCheck, label: "CEO & Founder", value: "Visionary" },
-                 { icon: Award, label: "Direct Selling", value: "Global Leader" },
-                 { icon: BookOpen, label: "Empowering", value: "Entrepreneurs" },
+                { icon: Microscope, label: "Clinical Research", value: "20+ Years" },
+                { icon: ShieldCheck, label: "Quality Standards", value: "WHO-GMP" },
+                { icon: Award, label: "Recognition", value: "15+ Awards" },
+                { icon: BookOpen, label: "Publications", value: "50+ Papers" },
               ].map((cred, i) => (
                 <div
                   key={i}
@@ -319,25 +303,24 @@ const timeline = [
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-             {
+              {
                 icon: Target,
                 title: "Our Mission",
-                desc: "To provide high-quality, natural healthcare products and meaningful business opportunities that empower individuals and families to lead healthier, happier, and more successful lives.",
-                color: "from-green-700 to-green-900",
+                desc: "To make authentic Ayurvedic wellness accessible to every household through clinically validated, premium-quality natural formulations.",
+                color: "from-primary to-primary-dark",
               },
               {
                 icon: Eye,
                 title: "Our Vision",
-                desc: "To become a globally trusted wellness and direct-selling organization by bringing real, natural, and innovative healthcare solutions to every household.",
-                color: "from-lime-600 to-green-700",
+                desc: "To become India's most trusted Ayurvedic brand, empowering millions to live healthier, balanced lives through nature's wisdom.",
+                color: "from-secondary to-secondary-dark",
               },
               {
                 icon: Heart,
                 title: "Our Promise",
-                desc: "We are committed to delivering authentic products, uncompromising quality, and complete customer satisfaction through integrity, transparency, and trust.",
-                color: "from-green-600 to-lime-600",
+                desc: "Every product is crafted with integrity, transparency, and an unwavering commitment to your wellness journey.",
+                color: "from-primary to-secondary",
               },
-
             ].map((item, i) => (
               <div
                 key={i}
@@ -369,7 +352,7 @@ const timeline = [
             What Makes Us <span className="text-primary italic">Different</span>
           </h2>
           <p className="text-sm md:text-base text-gray-500 mt-4">
-           Built on leadership, vision, perseverance, and a mission to help others achieve success.
+            Our commitment to soil safety and quality sets our remedies apart from the rest.
           </p>
         </div>
 

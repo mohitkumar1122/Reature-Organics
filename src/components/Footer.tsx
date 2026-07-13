@@ -31,17 +31,17 @@ export default function Footer() {
   };
 
   const trustFeatures = [
-    { icon: Truck, title: "Free Shipping", desc: "On orders above ₹5000" },
+    { icon: Truck, title: "Free Shipping", desc: "On orders above ₹500" },
     { icon: RefreshCw, title: "Easy Returns", desc: "7-day return policy" },
     { icon: Lock, title: "Secure Payment", desc: "100% protected" },
     { icon: Award, title: "Premium Quality", desc: "GMP certified" },
   ];
 
   const socialLinks = [
-    { icon: FaFacebookF, href: "https://www.facebook.com/share/1BB21CGc46/", label: "Facebook" },
-    { icon: FaInstagram, href: "https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA==", label: "Instagram" },
-    { icon: FaXTwitter, href: "https://twitter.com/ReaTureOrganics", label: "Twitter" },
-    { icon: FaYoutube, href: "https://youtube.com/@reatureofficial?si=mmHPGY4LPGqft-nX", label: "YouTube" },
+    { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
+    { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: FaXTwitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
   ];
 
   return (
@@ -244,7 +244,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+1800-8908-121"
+                  href="tel:+919876543210"
                   className="flex items-center gap-3 group hover:text-secondary transition-colors"
                 >
                   <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary/10 transition-colors">
@@ -252,13 +252,13 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-[11px] text-gray-500 uppercase tracking-wider">Call Us</p>
-                    <p className="text-gray-300 group-hover:text-secondary font-semibold">1800 8908 121</p>
+                    <p className="text-gray-300 group-hover:text-secondary font-semibold">+91 98765 43210</p>
                   </div>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto: Care@Reature.In"
+                  href="mailto:support@reatureorganic.com"
                   className="flex items-center gap-3 group hover:text-secondary transition-colors"
                 >
                   <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary/10 transition-colors">
@@ -267,7 +267,7 @@ export default function Footer() {
                   <div>
                     <p className="text-[11px] text-gray-500 uppercase tracking-wider">Email</p>
                     <p className="text-gray-300 group-hover:text-secondary font-semibold text-xs">
-                      Care@Reature.In
+                      support@reatureorganic.com
                     </p>
                   </div>
                 </a>
@@ -310,9 +310,15 @@ export default function Footer() {
 
         {/* Legal Links */}
         <div className="mt-6 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-gray-500">
-          {["Privacy Policy", "Terms of Service", "Refund Policy", "Shipping Info", "FAQ"].map((link) => (
-            <Link key={link} href="#" className="hover:text-secondary transition-colors">
-              {link}
+          {[
+            { label: "Privacy Policy", href: "/privacy-policy" },
+            { label: "Terms of Service", href: "/terms-of-service" },
+            { label: "Refund Policy", href: "/refund-policy" },
+            { label: "Shipping Info", href: "/shipping-policy" },
+            { label: "FAQ", href: "/faq" }
+          ].map((link) => (
+            <Link key={link.label} href={link.href} className="hover:text-secondary transition-colors">
+              {link.label}
             </Link>
           ))}
         </div>

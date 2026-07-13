@@ -159,9 +159,10 @@ export default function ProductDetailsClient({
 
         {/* Pricing */}
         <div className="flex items-baseline gap-3 pt-2">
-          <span className="text-3xl font-extrabold text-primary">Rs. {discountedPrice}</span>
+          <span className="text-sm text-gray-500 font-bold uppercase mr-1">MRP</span>
+          <span className="text-3xl font-extrabold text-primary">₹{discountedPrice}</span>
           {product.discountPercentage > 0 && (
-            <span className="text-base text-gray-400 line-through">Rs. {product.price}</span>
+            <span className="text-base text-gray-400 line-through">₹{product.price}</span>
           )}
           {product.discountPercentage > 0 && (
             <span className="text-xs font-bold text-secondary bg-secondary/10 px-2 py-0.5 rounded">
@@ -312,7 +313,7 @@ export default function ProductDetailsClient({
                     />
                     <div className="max-w-[120px] text-xs">
                       <p className="font-bold truncate text-darkText">{p.title}</p>
-                      <p className="text-primary font-bold">Rs. {Math.round(p.price * (1 - p.discountPercentage / 100))}</p>
+                      <p className="text-primary font-bold">MRP ₹{Math.round(p.price * (1 - p.discountPercentage / 100))}</p>
                     </div>
                   </div>
                 </React.Fragment>
@@ -324,17 +325,17 @@ export default function ProductDetailsClient({
             <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm min-w-[220px] text-center space-y-3">
               <div className="text-xs">
                 <span className="text-gray-500">Bundle Price: </span>
-                <span className="font-bold text-gray-500 line-through">Rs. {Math.round(bundleSubtotal)}</span>
+                <span className="font-bold text-gray-500 line-through">₹{Math.round(bundleSubtotal)}</span>
               </div>
               
               {isBundleEligible && (
                 <div className="text-xs text-secondary font-bold">
-                  Bundle Discount (10%): -Rs. {Math.round(bundleDiscount)}
+                  Bundle Discount (10%): -₹{Math.round(bundleDiscount)}
                 </div>
               )}
 
               <div className="text-lg font-extrabold text-primary">
-                Total: Rs. {Math.round(bundleTotal)}
+                Total: ₹{Math.round(bundleTotal)}
               </div>
 
               <button

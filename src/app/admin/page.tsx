@@ -38,7 +38,7 @@ export default async function AdminDashboardPage() {
         <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
           <div className="space-y-1">
             <span className="text-gray-400 font-bold uppercase tracking-wider text-[9px]">Total Sales</span>
-            <p className="text-2xl font-extrabold text-primary">Rs. {metrics.totalRevenue}</p>
+            <p className="text-2xl font-extrabold text-primary">₹{metrics.totalRevenue}</p>
           </div>
           <div className="w-12 h-12 rounded-2xl bg-primary-light text-primary flex items-center justify-center">
             <Landmark className="w-6 h-6" />
@@ -95,7 +95,7 @@ export default async function AdminDashboardPage() {
                 <div key={i} className="flex-1 flex flex-col items-center group relative">
                   {/* Tooltip on hover */}
                   <div className="absolute bottom-full mb-2 bg-darkText text-white text-[9px] font-bold py-1 px-2 rounded hidden group-hover:block z-15 whitespace-nowrap">
-                    Rs. {d.sales} ({d.orders} orders)
+                    ₹{d.sales} ({d.orders} orders)
                   </div>
                   
                   {/* Visual column bar */}
@@ -165,7 +165,7 @@ export default async function AdminDashboardPage() {
                       <p className="font-bold text-darkText">{ord.user?.name}</p>
                       <p className="text-gray-400 text-[10px]">{ord.user?.email}</p>
                     </td>
-                    <td className="py-3 text-right font-bold text-primary">Rs. {ord.totalAmount}</td>
+                    <td className="py-3 text-right font-bold text-primary">₹{ord.totalAmount}</td>
                     <td className="py-3 text-center">
                       <span className={`inline-flex px-2 py-0.5 rounded-full text-[9px] font-bold border capitalize ${getStatusColor(ord.deliveryStatus)}`}>
                         {ord.deliveryStatus}

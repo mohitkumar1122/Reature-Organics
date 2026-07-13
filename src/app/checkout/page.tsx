@@ -487,7 +487,7 @@ export default function CheckoutPage() {
                       <p className="font-bold truncate text-darkText">{item.product.title}</p>
                       <p className="text-gray-400">Qty: {item.quantity}</p>
                     </div>
-                    <span className="font-bold text-darkText shrink-0">Rs. {itemPrice * item.quantity}</span>
+                    <span className="font-bold text-darkText shrink-0">₹{itemPrice * item.quantity}</span>
                   </div>
                 );
               })}
@@ -497,27 +497,27 @@ export default function CheckoutPage() {
             <div className="space-y-2.5 pt-4 border-t border-gray-100">
               <div className="flex justify-between text-gray-500">
                 <span>Subtotal</span>
-                <span>Rs. {Math.round(subtotal)}</span>
+                <span>₹{Math.round(subtotal)}</span>
               </div>
               {discount > 0 && (
                 <div className="flex justify-between text-secondary font-bold">
                   <span>Coupon Discount</span>
-                  <span>-Rs. {Math.round(discount)}</span>
+                  <span>-₹{Math.round(discount)}</span>
                 </div>
               )}
               <div className="flex justify-between text-gray-500">
                 <span>GST (5%)</span>
-                <span>Rs. {tax}</span>
+                <span>₹{tax}</span>
               </div>
               <div className="flex justify-between text-gray-500">
                 <span>Delivery Charges</span>
-                <span>{shipping === 0 ? "FREE" : `Rs. ${shipping}`}</span>
+                <span>{shipping === 0 ? "FREE" : `₹${shipping}`}</span>
               </div>
             </div>
 
             <div className="flex justify-between text-base font-extrabold text-darkText pt-4 border-t border-gray-100">
               <span>Grand Total</span>
-              <span className="text-primary">Rs. {total}</span>
+              <span className="text-primary">₹{total}</span>
             </div>
 
             {/* Verification label */}

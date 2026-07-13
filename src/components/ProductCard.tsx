@@ -134,10 +134,11 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
         {/* Pricing and Cart Action */}
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-50">
           <div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-base font-bold text-primary">Rs. {discountedPrice}</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-[10px] text-gray-500 font-bold mr-0.5">MRP</span>
+              <span className="text-base font-bold text-primary">₹{discountedPrice}</span>
               {product.discountPercentage > 0 && (
-                <span className="text-xs text-gray-400 line-through">Rs. {product.price}</span>
+                <span className="text-xs text-gray-400 line-through ml-1">₹{product.price}</span>
               )}
             </div>
             {product.stock <= 0 ? (

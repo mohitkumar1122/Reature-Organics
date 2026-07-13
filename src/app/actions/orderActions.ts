@@ -42,7 +42,7 @@ export async function validateCouponAction(code: string, cartSubtotal: number) {
   if (cartSubtotal < coupon.minOrderValue) {
     return {
       success: false,
-      message: `Minimum order subtotal to use this coupon is Rs. ${coupon.minOrderValue}`,
+      message: `Minimum order subtotal to use this coupon is ₹${coupon.minOrderValue}`,
     };
   }
 

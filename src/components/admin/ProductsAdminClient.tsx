@@ -231,9 +231,9 @@ export default function ProductsAdminClient({
                   </td>
                   <td className="p-4 text-gray-500">{p.category?.name || "Ayurveda"}</td>
                   <td className="p-4 text-right">
-                    <p className="font-bold text-primary">Rs. {discountedPrice}</p>
+                    <p className="font-bold text-primary">₹{discountedPrice}</p>
                     {p.discountPercentage > 0 && (
-                      <p className="text-[10px] text-gray-400 line-through">Rs. {p.price}</p>
+                      <p className="text-[10px] text-gray-400 line-through">₹{p.price}</p>
                     )}
                   </td>
                   <td className="p-4 text-center">
@@ -330,7 +330,7 @@ export default function ProductsAdminClient({
               {/* Grid 2 */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="space-y-1">
-                  <label className="font-bold text-gray-700">Base Price (Rs.)</label>
+                  <label className="font-bold text-gray-700">Base Price (₹)</label>
                   <input
                     type="number"
                     required

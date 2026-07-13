@@ -55,7 +55,7 @@ export default async function DashboardOrdersPage() {
                 </div>
                 <div className="flex items-center gap-4 text-gray-500">
                   <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> {new Date(order.createdAt).toLocaleDateString()}</span>
-                  <span>Amount: <span className="font-bold text-primary">Rs. {order.totalAmount}</span></span>
+                  <span>Amount: <span className="font-bold text-primary">₹{order.totalAmount}</span></span>
                   <span className="capitalize">Method: {order.paymentMethod}</span>
                 </div>
                 

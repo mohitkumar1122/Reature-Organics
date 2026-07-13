@@ -196,12 +196,12 @@ export default function AdminCouponsPage() {
                   <tr key={c._id}>
                     <td className="p-4 font-mono font-bold text-primary text-sm">{c.code}</td>
                     <td className="p-4 text-darkText capitalize">
-                      {c.discountType === "percentage" ? `${c.value}% off (Cap: Rs. ${c.maxDiscount || "No Cap"})` : `Rs. ${c.value} off`}
+                      {c.discountType === "percentage" ? `${c.value}% off (Cap: ₹${c.maxDiscount || "No Cap"})` : `₹${c.value} off`}
                     </td>
                     <td className="p-4 text-gray-500 flex items-center gap-1 mt-2">
                       <Calendar className="w-3.5 h-3.5 text-primary" /> {new Date(c.expiryDate).toLocaleDateString()}
                     </td>
-                    <td className="p-4 text-center text-darkText">Rs. {c.minOrderValue}</td>
+                    <td className="p-4 text-center text-darkText">₹{c.minOrderValue}</td>
                     <td className="p-4 text-center">
                       <button
                         onClick={() => handleDelete(c._id)}

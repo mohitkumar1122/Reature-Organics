@@ -1,4 +1,4 @@
-  "use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -43,18 +43,18 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      lines: ["1800-8908-121", "+91 8006762121"],
+      lines: ["+91 98765 43210", "+91 98765 43211"],
       sub: "Mon-Sat, 9 AM - 6 PM",
       color: "from-primary to-primary-dark",
-      action: "tel:+1800-8908-121",
+      action: "tel:+919876543210",
     },
     {
       icon: Mail,
       title: "Email Us",
-      lines: ["care@reature.in", "reatureorganics@gmail.com"],
+      lines: ["support@reatureorganic.com", "info@reatureorganic.com"],
       sub: "Reply within 24 hours",
       color: "from-secondary to-secondary-dark",
-      action: "mailto:care@reature.in",
+      action: "mailto:support@reatureorganic.com",
     },
     {
       icon: FaWhatsapp,
@@ -62,7 +62,7 @@ export default function ContactPage() {
       lines: ["Quick chat support"],
       sub: "Instant responses",
       color: "from-green-500 to-green-600",
-      action: "https://wa.me/8006762121",
+      action: "https://wa.me/919876543210",
     },
   ];
 
@@ -175,10 +175,7 @@ export default function ContactPage() {
                     Registered Office
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Agra-Mathura Bypass Opposite,<br />
-                    Rahmatpur Garhmai (Near Kamalpur Chauraha),<br />
-                    Aligarh 202002, Uttar Pradesh,<br />
-                    India.
+                    Agra- Mathura Bypass Road, <br/> in front of Rehmatpur Garmai, near Kamalpur, <br/>Chauraha, Aligarh, Kamalpur, <br/> Uttar Pradesh 202001
                   </p>
                 </div>
 
@@ -215,30 +212,10 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-4 gap-3">
                 {[
-                {
-                  Icon: FaFacebookF,
-                  color: "bg-[#1877F2]",
-                  label: "Facebook",
-                  url: "https://facebook.com/yourpage"
-               },
-               {
-                  Icon: FaInstagram,
-                  color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]",
-                  label: "Instagram",
-                  url: "https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA=="
-               },
-               {
-                  Icon: FaXTwitter,
-                  color: "bg-darkText",
-                  label: "Twitter",
-                  url: "https://x.com/yourpage"
-              },
-              {
-                  Icon: FaYoutube,
-                  color: "bg-[#FF0000]",
-                  label: "YouTube",
-                  url: "https://youtube.com/@yourchannel"
-              },
+                  { Icon: FaFacebookF, color: "bg-[#1877F2]", label: "Facebook" },
+                  { Icon: FaInstagram, color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]", label: "Instagram" },
+                  { Icon: FaXTwitter, color: "bg-darkText", label: "Twitter" },
+                  { Icon: FaYoutube, color: "bg-[#FF0000]", label: "YouTube" },
                 ].map((social, i) => (
                   <a
                     key={i}
@@ -359,7 +336,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           required
-                          placeholder="Hariom Singh"
+                          placeholder="Jane Doe"
                           value={formData.name}
                           onChange={(e) =>
                             setFormData({ ...formData, name: e.target.value })
@@ -374,7 +351,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           required
-                          placeholder="Hariom@example.com"
+                          placeholder="jane@example.com"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
@@ -391,7 +368,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="tel"
-                          placeholder="+91 8006762121"
+                          placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
@@ -495,15 +472,12 @@ export default function ContactPage() {
                   Find Us On Map
                 </h3>
                 <p className="text-xs text-gray-500 mt-0.5">
-                   Agra-Mathura Bypass Opposite,<br />
-                    Rahmatpur Garhmai (Near Kamalpur Chauraha),<br />
-                    Aligarh 202002, Uttar Pradesh,<br />
-                    India.
+                  Agra- Mathura Bypass Road, in front of Rehmatpur Garmai, near Kamalpur, Chauraha, Aligarh, Kamalpur, Uttar Pradesh 202001
                 </p>
               </div>
             </div>
             <a
-              href="https://www.google.com/maps/place/ReaTure+Organics+Pvt+Ltd/@27.846224,78.105881,16z/data=!4m6!3m5!1s0x3974a3ba1f9ba727:0xc1af6086228036e9!8m2!3d27.8459547!4d78.110599!16s%2Fg%2F11mvwcnwbh?hl=en&entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D"
+              href="https://maps.google.com/?q=DLF+Phase+3+Gurugram"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-primary-light text-primary hover:bg-primary hover:text-white transition-all"
@@ -514,9 +488,8 @@ export default function ContactPage() {
           </div>
           <div className="h-72 md:h-96 w-full relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.81638958061!2d78.1083053150651!3d27.846181682734674!2m3!1f0!2f0!3f0!
-              3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a3ba1f9ba727%3A0xc1af6086228036e9!2sReaTure%20
-              Organics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1627294172235!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14030.57962489622!2d77.08639209594689!3d28.4901614745864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1937ceea17db%3A0xea89a0ebf49e0b12!2sDLF%20Phase%203%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              className="w-full h-full border-none grayscale-[0.3] hover:grayscale-0 transition-all duration-500"
               allowFullScreen={false}
               loading="lazy"
             />

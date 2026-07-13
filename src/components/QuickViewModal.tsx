@@ -88,9 +88,10 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
           <div className="space-y-5 mt-6 pt-4 border-t border-gray-100">
             {/* Pricing */}
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-extrabold text-primary">Rs. {discountedPrice}</span>
+              <span className="text-sm text-gray-500 font-bold uppercase mr-1">MRP</span>
+              <span className="text-3xl font-extrabold text-primary">₹{discountedPrice}</span>
               {product.discountPercentage > 0 && (
-                <span className="text-sm text-gray-400 line-through">Rs. {product.price}</span>
+                <span className="text-sm text-gray-400 line-through">₹{product.price}</span>
               )}
             </div>
 

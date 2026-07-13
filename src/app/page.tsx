@@ -362,7 +362,7 @@ export default async function HomePage() {
               <p className="text-sm text-gray-200 mt-2">Follow @reatureorganic for daily wellness tips & exclusive offers</p>
             </div>
             <Link
-              href="https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA%3D%3D"
+              href="https://instagram.com"
               target="_blank"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-primary text-sm font-bold hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg"
             >

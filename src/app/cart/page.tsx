@@ -88,7 +88,7 @@ export default function CartPage() {
                         {item.product.title}
                       </Link>
                       <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{item.product.brand}</p>
-                      <p className="text-xs text-primary font-bold">Rs. {itemPrice}</p>
+                      <p className="text-xs text-primary font-bold">MRP ₹{itemPrice}</p>
                     </div>
                   </div>
 
@@ -174,34 +174,34 @@ export default function CartPage() {
               Checkout Details
             </h3>
 
-            <div className="space-y-2.5">
+              <div className="space-y-2.5">
               <div className="flex justify-between text-gray-500">
                 <span>Subtotal</span>
-                <span>Rs. {Math.round(subtotal)}</span>
+                <span>₹{Math.round(subtotal)}</span>
               </div>
               {discount > 0 && (
                 <div className="flex justify-between text-secondary font-bold">
                   <span>Coupon Discount</span>
-                  <span>-Rs. {Math.round(discount)}</span>
+                  <span>-₹{Math.round(discount)}</span>
                 </div>
               )}
               <div className="flex justify-between text-gray-500">
                 <span>GST (5%)</span>
-                <span>Rs. {tax}</span>
+                <span>₹{tax}</span>
               </div>
               <div className="flex justify-between text-gray-500">
                 <span>Delivery Charges</span>
-                <span>{shipping === 0 ? "FREE" : `Rs. ${shipping}`}</span>
+                <span>{shipping === 0 ? "FREE" : `₹${shipping}`}</span>
               </div>
               
               {shipping > 0 && (
-                <p className="text-[10px] text-gray-400 italic">Add Rs. {Math.round(500 - (subtotal - discount))} more to unlock FREE delivery.</p>
+                <p className="text-[10px] text-gray-400 italic">Add ₹{Math.round(500 - (subtotal - discount))} more to unlock FREE delivery.</p>
               )}
             </div>
 
             <div className="flex justify-between text-base font-extrabold text-darkText pt-4 border-t border-gray-100">
               <span>Grand Total</span>
-              <span className="text-primary">Rs. {total}</span>
+              <span className="text-primary">₹{total}</span>
             </div>
 
             <Link

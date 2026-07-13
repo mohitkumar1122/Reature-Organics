@@ -88,10 +88,11 @@ export default function WishlistPage() {
                       {product.title}
                     </Link>
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{product.brand}</p>
-                    <div className="flex items-baseline gap-1.5 pt-1">
-                      <span className="font-bold text-primary">Rs. {discPrice}</span>
+                    <div className="flex items-baseline gap-1 pt-1">
+                      <span className="text-[9px] text-gray-500 font-bold mr-0.5">MRP</span>
+                      <span className="font-bold text-primary">₹{discPrice}</span>
                       {product.discountPercentage > 0 && (
-                        <span className="text-[10px] text-gray-400 line-through">Rs. {product.price}</span>
+                        <span className="text-[10px] text-gray-400 line-through ml-1">₹{product.price}</span>
                       )}
                     </div>
                   </div>
