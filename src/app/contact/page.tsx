@@ -43,10 +43,10 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      lines: ["+91 98765 43210", "+91 98765 43211"],
-      sub: "Mon-Sat, 9 AM - 6 PM",
+      lines: ["+91 1800 8908 121", "+91 1800 8908 121"],
+      sub: "Mon-Sat, 10 AM - 5 PM",
       color: "from-primary to-primary-dark",
-      action: "tel:+919876543210",
+      action: "tel:+918006762121",
     },
     {
       icon: Mail,
@@ -54,7 +54,7 @@ export default function ContactPage() {
       lines: ["Care@Reature.In", "Care@Reature.In"],
       sub: "Reply within 24 hours",
       color: "from-secondary to-secondary-dark",
-      action: "mailto:support@reatureorganic.com",
+      action: "Care@reature.in",
     },
     {
       icon: FaWhatsapp,
