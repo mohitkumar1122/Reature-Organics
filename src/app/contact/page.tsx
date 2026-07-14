@@ -51,7 +51,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      lines: ["support@reatureorganic.com", "info@reatureorganic.com"],
+      lines: ["Care@Reature.In", "Care@Reature.In"],
       sub: "Reply within 24 hours",
       color: "from-secondary to-secondary-dark",
       action: "mailto:support@reatureorganic.com",
@@ -62,7 +62,7 @@ export default function ContactPage() {
       lines: ["Quick chat support"],
       sub: "Instant responses",
       color: "from-green-500 to-green-600",
-      action: "https://wa.me/919876543210",
+      action: "https://wa.me/8006762121",
     },
   ];
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
                   <div className="space-y-1.5 text-xs">
                     <div className="flex justify-between">
                       <span className="text-gray-500">Monday - Friday</span>
-                      <span className="font-bold text-darkText">9:00 AM - 6:00 PM</span>
+                      <span className="font-bold text-darkText">10:00 AM - 5:00 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Saturday</span>
@@ -351,7 +351,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           required
-                          placeholder="jane@example.com"
+                          placeholder="Care@Reature.In"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
@@ -477,7 +477,7 @@ export default function ContactPage() {
               </div>
             </div>
             <a
-              href="https://maps.google.com/?q=DLF+Phase+3+Gurugram"
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.81638958061!2d78.1083053150651!3d27.846181682734674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a3ba1f9ba727%3A0xc1af6086228036e9!2sReaTure%20Organics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1627294172235!5m2!1sen!2sin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-primary-light text-primary hover:bg-primary hover:text-white transition-all"
@@ -488,7 +488,7 @@ export default function ContactPage() {
           </div>
           <div className="h-72 md:h-96 w-full relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14030.57962489622!2d77.08639209594689!3d28.4901614745864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1937ceea17db%3A0xea89a0ebf49e0b12!2sDLF%20Phase%203%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.81638958061!2d78.1083053150651!3d27.846181682734674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a3ba1f9ba727%3A0xc1af6086228036e9!2sReaTure%20Organics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1627294172235!5m2!1sen!2sin"
               className="w-full h-full border-none grayscale-[0.3] hover:grayscale-0 transition-all duration-500"
               allowFullScreen={false}
               loading="lazy"
