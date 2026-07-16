@@ -18,7 +18,7 @@ export default function AboutPage() {
   { title: "25+", desc: "Years of Leadership", icon: Users },
   { title: "100%", desc: "Real & Natural", icon: Leaf },
   { title: "PAN India", desc: "Business Network", icon: Globe },
-  { title: "Direct Selling", desc: "Business Opportunity", icon: Briefcase },
+  { title: "Direct Selling", desc: "Business Opportunity", icon: Briefcase }, 
 ];
 
   const values = [
