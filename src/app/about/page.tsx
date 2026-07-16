@@ -275,7 +275,6 @@ export default function AboutPage() {
       opportunities for people.
     </p>
   </div>
-</div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
