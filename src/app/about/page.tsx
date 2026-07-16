@@ -216,7 +216,7 @@ export default function AboutPage() {
 
             <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-large">
               <img
-                src="https://res.cloudinary.com/mjd0pqh1/image/upload/t_media_lib_thumb/sir_ji_new_photo_y4jkjf.png"
+                src="https://res.cloudinary.com/mjd0pqh1/image/upload/sir_ji_new_photo_y4jkjf.png"
                 alt="Founder of ReaTure Organic"
                 className="w-full h-full object-cover"
               />
@@ -241,7 +241,7 @@ export default function AboutPage() {
           </div>
 
           {/* Content */}
-     <div className="space-y-6">
+    <div className="space-y-6">
   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary-light px-4 py-1.5 rounded-full border border-primary/10">
     <Users className="w-3 h-3" />
     Meet Our Leader
@@ -250,9 +250,11 @@ export default function AboutPage() {
   <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
     Yudhishthir <span className="text-primary italic">Singh</span>
   </h2>
+
   <p className="text-sm text-primary font-semibold">
     CEO & Founder
   </p>
+
   <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
     <p>
       Yudhishthir Singh is a modern-day business leader with more than
@@ -260,11 +262,13 @@ export default function AboutPage() {
       His determination and entrepreneurial spirit have helped him become
       a successful leader in the direct-selling industry.
     </p>
+
     <p>
       Helping others become successful has always been an important part
       of his mission. He strongly believes that when you help people fulfil
       their dreams, they will also support you in achieving your own goals.
     </p>
+
     <p>
       His success is driven by determination, perseverance, quality work,
       strong ethics, and an unwavering commitment to creating better
