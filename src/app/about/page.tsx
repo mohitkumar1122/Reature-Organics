@@ -233,7 +233,7 @@ export default function AboutPage() {
 
             {/* Stats badge */}
             <div className="absolute top-6 right-6 bg-white p-4 rounded-2xl shadow-large border border-gray-100">
-              <p className="text-2xl font-bold text-primary font-serif">20+</p>
+              <p className="text-2xl font-bold text-primary font-serif">25+</p>
               <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">
                 Years Experience
               </p>
@@ -247,9 +247,9 @@ export default function AboutPage() {
               Meet Our Leader
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
-              Dr. Vasudev <span className="text-primary italic">Shastri</span>
+              Yudhishthir <span className="text-primary italic">Singh</span>
             </h2>
-            <p className="text-sm text-primary font-semibold">Founder & Chief Formulator</p>
+            <p className="text-sm text-primary font-semibold">Founder & CEO</p>
 
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
               <p>
