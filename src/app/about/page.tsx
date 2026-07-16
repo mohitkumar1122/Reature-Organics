@@ -4,7 +4,7 @@ import {
   ShieldCheck, Heart, Leaf, Medal, Award, CheckCircle,
   Sparkles, Quote, Calendar, Microscope, Users, Globe,
   TrendingUp, ArrowRight, Target, Eye, Compass, BookOpen,
-  Home, ChevronRight, Users, Briefcase, Target, Leaf 
+  Home, ChevronRight, 
 } from "lucide-react";
 
 export const metadata = {
@@ -287,27 +287,27 @@ export default function AboutPage() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-                {
-                  icon: Users,
-                  label: "Industry Experience",
-                  value: "25+ Years",
-                },
-                {
-                  icon: Briefcase,
-                  label: "Leadership",
-                  value: "Direct Selling",
-                },
-                {
-                  icon: HeartHandshake,
-                  label: "Mission",
-                  value: "Empowering People",
-                },
-                {
-                  icon: Leaf,
-                  label: "Vision",
-                  value: "Real + Nature",
-                },
-              ].map((cred, i) => (
+  {
+    icon: Users,
+    label: "Experience",
+    value: "25+ Years",
+  },
+  {
+    icon: Target,
+    label: "Mission",
+    value: "Helping Others",
+  },
+  {
+    icon: Trophy,
+    label: "Leadership",
+    value: "Direct Selling",
+  },
+  {
+    icon: Sparkles,
+    label: "Brand Vision",
+    value: "Real + Nature",
+  },
+].map((cred, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 p-3 rounded-2xl bg-lightBg border border-gray-100"
