@@ -287,10 +287,26 @@ export default function AboutPage() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-                { icon: Microscope, label: "Clinical Research", value: "20+ Years" },
-                { icon: ShieldCheck, label: "Quality Standards", value: "WHO-GMP" },
-                { icon: Award, label: "Recognition", value: "15+ Awards" },
-                { icon: BookOpen, label: "Publications", value: "50+ Papers" },
+                {
+                  icon: Users,
+                  label: "Industry Experience",
+                  value: "25+ Years",
+                },
+                {
+                  icon: Briefcase,
+                  label: "Leadership",
+                  value: "Direct Selling",
+                },
+                {
+                  icon: HeartHandshake,
+                  label: "Mission",
+                  value: "Empowering People",
+                },
+                {
+                  icon: Leaf,
+                  label: "Vision",
+                  value: "Real + Nature",
+                },
               ].map((cred, i) => (
                 <div
                   key={i}
