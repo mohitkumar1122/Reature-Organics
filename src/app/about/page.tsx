@@ -241,24 +241,37 @@ export default function AboutPage() {
           </div>
 
           {/* Content */}
-          <div className="space-y-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary-light px-4 py-1.5 rounded-full border border-primary/10">
-              <Users className="w-3 h-3" />
-              Meet Our Leader
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
-              Yudhishthir <span className="text-primary italic">Singh</span>
-            </h2>
-            <p className="text-sm text-primary font-semibold">Founder & CEO</p>
+     <div className="space-y-6">
+  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary-light px-4 py-1.5 rounded-full border border-primary/10">
+    <Users className="w-3 h-3" />
+    Meet Our Leader
+  </span>
 
-            <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
-              <p>
-                Dr. Vasudev Shastri completed his post-graduation in Ayurvedic Pharmacology (Dravyaguna Vijnana) from the Gujarat Ayurved University, Jamnagar. Observing a lack of consistency and clinical purity in D2C wellness brands, he established ReaTure Organic in 2021.
-              </p>
-              <p>
-                Under his guidance, our research lab standardizes active constituents like Withanolides in Ashwagandha, Bacosides in Brahmi, and Guggulsterones in Guggul, ensuring every tablet provides exact biological doses.
-              </p>
-            </div>
+  <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
+    Yudhishthir <span className="text-primary italic">Singh</span>
+  </h2>
+  <p className="text-sm text-primary font-semibold">
+    CEO & Founder
+  </p>
+  <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
+    <p>
+      Yudhishthir Singh is a modern-day business leader with more than
+      25 years of experience, success, leadership, and a clear vision.
+      His determination and entrepreneurial spirit have helped him become
+      a successful leader in the direct-selling industry.
+    </p>
+    <p>
+      Helping others become successful has always been an important part
+      of his mission. He strongly believes that when you help people fulfil
+      their dreams, they will also support you in achieving your own goals.
+    </p>
+    <p>
+      His success is driven by determination, perseverance, quality work,
+      strong ethics, and an unwavering commitment to creating better
+      opportunities for people.
+    </p>
+  </div>
+</div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
