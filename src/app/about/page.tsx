@@ -216,7 +216,7 @@ export default function AboutPage() {
 
             <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-large">
               <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800"
+                src="https://res.cloudinary.com/mjd0pqh1/image/upload/t_media_lib_thumb/sir_ji_new_photo_y4jkjf.png"
                 alt="Founder of ReaTure Organic"
                 className="w-full h-full object-cover"
               />
