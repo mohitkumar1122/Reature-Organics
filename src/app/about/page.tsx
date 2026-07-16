@@ -287,10 +287,10 @@ export default function AboutPage() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-  { icon: Users, label: "Experience", value: "25+ Years" },
-  { icon: Briefcase, label: "Industry", value: "Direct Selling" },
-  { icon: Target, label: "Mission", value: "Helping People" },
-  { icon: Leaf, label: "Vision", value: "Real + Nature" },
+ { icon: Users, label: "Experience", value: "25+ Years" },
+{ icon: Briefcase, label: "Industry", value: "Direct Selling" },
+{ icon: Target, label: "Mission", value: "Helping People" },
+{ icon: Leaf, label: "Vision", value: "Real + Nature" },
 ].map((cred, i) => (
                 <div
                   key={i}
