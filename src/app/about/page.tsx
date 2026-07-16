@@ -15,11 +15,11 @@ export const metadata = {
 
 export default function AboutPage() {
   const metrics = [
-    { title: "10,000+", desc: "Happy Wellness Families", icon: Users },
-    { title: "100%", desc: "Clinically Verified Herbs", icon: ShieldCheck },
-    { title: "WHO-GMP", desc: "Certified Standard", icon: Award },
-    { title: "45+", desc: "Potent Formulations", icon: Microscope },
-  ];
+  { title: "25+", desc: "Years of Leadership", icon: Users },
+  { title: "100%", desc: "Real & Natural", icon: Leaf },
+  { title: "PAN India", desc: "Business Network", icon: Globe },
+  { title: "Direct Selling", desc: "Business Opportunity", icon: Briefcase },
+];
 
   const values = [
     {
