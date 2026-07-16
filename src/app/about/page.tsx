@@ -241,7 +241,7 @@ export default function AboutPage() {
           </div>
 
           {/* Content */}
-    <div className="space-y-6">
+   <div className="space-y-6">
   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary-light px-4 py-1.5 rounded-full border border-primary/10">
     <Users className="w-3 h-3" />
     Meet Our Leader
@@ -275,6 +275,7 @@ export default function AboutPage() {
       opportunities for people.
     </p>
   </div>
+</div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
