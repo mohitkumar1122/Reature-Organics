@@ -241,38 +241,45 @@ export default function AboutPage() {
           </div>
 
           {/* Content */}
-   <div className="space-y-6">
+  <div className="space-y-6">
+  {/* Badge */}
   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary-light px-4 py-1.5 rounded-full border border-primary/10">
     <Users className="w-3 h-3" />
     Meet Our Leader
   </span>
 
+  {/* Heading */}
   <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-darkText leading-tight">
     Yudhishthir <span className="text-primary italic">Singh</span>
   </h2>
 
+  {/* Designation */}
   <p className="text-sm text-primary font-semibold">
     CEO & Founder
   </p>
 
+  {/* Description */}
   <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
     <p>
-      Yudhishthir Singh is a modern-day business leader with more than
-      25 years of experience, success, leadership, and a clear vision.
-      His determination and entrepreneurial spirit have helped him become
-      a successful leader in the direct-selling industry.
+      Yudhishthir Singh is a modern-day business leader with over
+      25 years of experience in leadership, entrepreneurship, and
+      the direct-selling industry. His clear vision and dedication
+      have established him as a trusted leader committed to creating
+      opportunities for thousands of people.
     </p>
 
     <p>
-      Helping others become successful has always been an important part
-      of his mission. He strongly believes that when you help people fulfil
-      their dreams, they will also support you in achieving your own goals.
+      He firmly believes that true success comes from helping others
+      achieve their dreams. Through his leadership, ReaTure has built
+      a strong community focused on growth, trust, quality, and
+      long-term relationships.
     </p>
 
     <p>
-      His success is driven by determination, perseverance, quality work,
-      strong ethics, and an unwavering commitment to creating better
-      opportunities for people.
+      His journey reflects determination, perseverance, ethical
+      business practices, and a passion for delivering natural
+      healthcare products while empowering individuals to achieve
+      financial independence and a better future.
     </p>
   </div>
 </div>
