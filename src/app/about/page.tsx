@@ -4,7 +4,7 @@ import {
   ShieldCheck, Heart, Leaf, Medal, Award, CheckCircle,
   Sparkles, Quote, Calendar, Microscope, Users, Globe,
   TrendingUp, ArrowRight, Target, Eye, Compass, BookOpen,
-  Home, ChevronRight, Users, Briefcase, Target, Leaf 
+  Home, ChevronRight,  Briefcase,
 } from "lucide-react";
 
 export const metadata = {
