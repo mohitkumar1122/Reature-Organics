@@ -312,7 +312,7 @@ export default function Footer() {
         <div className="mt-6 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-gray-500">
           {[
             { label: "Privacy Policy", href: "/privacy-policy" },
-            { label: "Terms of Service", href: "/terms-of-service" },
+            { label: "Terms & Condition", href: "/terms-of-service" },
             { label: "Refund Policy", href: "/refund-policy" },
             { label: "Shipping Info", href: "/shipping-policy" },
             { label: "FAQ", href: "/faq" }
