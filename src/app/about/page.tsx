@@ -13,8 +13,7 @@ export const metadata = {
     "Learn about ReaTure Organic, our vertical supply chains, WHO-GMP processing certified facilities, and our dedication to organic herbal quality.",
 };
 
-export default function AboutPage() 
-{
+export default function AboutPage() {
   const metrics = [
   { title: "25+", desc: "Years of Leadership", icon: Users },
   { title: "100%", desc: "Real & Natural", icon: Leaf },
@@ -60,7 +59,7 @@ export default function AboutPage()
       gradient: "from-secondary-light to-primary-light",
     },
   ];
-};
+}
 
   const timeline = [
     {
