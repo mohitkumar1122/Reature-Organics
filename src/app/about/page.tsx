@@ -288,11 +288,11 @@ export default function AboutPage() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-                { icon: Microscope, label: "Clinical Research", value: "20+ Years" },
-                { icon: ShieldCheck, label: "Quality Standards", value: "WHO-GMP" },
-                { icon: Award, label: "Recognition", value: "15+ Awards" },
-                { icon: BookOpen, label: "Publications", value: "50+ Papers" },
-              ].map((cred, i) => (
+  { icon: Award, label: "Success Journey", value: "25+ Years" },
+  { icon: Briefcase, label: "Industry", value: "Direct Selling" },
+  { icon: HeartHandshake, label: "Mission", value: "Helping Others" },
+  { icon: ShieldCheck, label: "Quality", value: "Work & Ethics" },
+].map((cred, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 p-3 rounded-2xl bg-lightBg border border-gray-100"
