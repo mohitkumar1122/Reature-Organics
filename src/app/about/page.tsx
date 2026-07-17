@@ -14,12 +14,12 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  const metrics = [
-  { title: "25+", desc: "Years of Leadership", icon: Users },
-  { title: "100%", desc: "Real & Natural", icon: Leaf },
-  { title: "PAN India", desc: "Business Network", icon: Globe },
-  { title: "Direct Selling", desc: "Business Opportunity", icon: Briefcase }, 
-];
+   const metrics = [
+    { title: "10,000+", desc: "Happy Wellness Families", icon: Users },
+    { title: "100%", desc: "Clinically Verified Herbs", icon: ShieldCheck },
+    { title: "WHO-GMP", desc: "Certified Standard", icon: Award },
+    { title: "45+", desc: "Potent Formulations", icon: Microscope },
+  ];
 
   const values = [
     {
@@ -288,11 +288,11 @@ export default function AboutPage() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-                 { icon: Users, label: "Experience", value: "25+ Years" },
-                  { icon: Briefcase, label: "Industry", value: "Direct Selling" },
-                  { icon: Target, label: "Mission", value: "Helping People" },
-                  { icon: Leaf, label: "Vision", value: "Real + Nature" },
-                ]}.map((cred, i) => (
+                { icon: Microscope, label: "Clinical Research", value: "20+ Years" },
+                { icon: ShieldCheck, label: "Quality Standards", value: "WHO-GMP" },
+                { icon: Award, label: "Recognition", value: "15+ Awards" },
+                { icon: BookOpen, label: "Publications", value: "50+ Papers" },
+              ].map((cred, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 p-3 rounded-2xl bg-lightBg border border-gray-100"
