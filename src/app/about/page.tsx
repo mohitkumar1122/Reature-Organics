@@ -4,7 +4,7 @@ import {
   ShieldCheck, Heart, Leaf, Medal, Award, CheckCircle,
   Sparkles, Quote, Calendar, Microscope, Users, Globe,
   TrendingUp, ArrowRight, Target, Eye, Compass, BookOpen,
-  Home, ChevronRight,  Briefcase,
+  Home, ChevronRight,  Briefcase, TrendingUp,
 } from "lucide-react";
 
 export const metadata = {
@@ -14,12 +14,12 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-   const metrics = [
-    { title: "10,000+", desc: "Happy Wellness Families", icon: Users },
-    { title: "100%", desc: "Clinically Verified Herbs", icon: ShieldCheck },
-    { title: "WHO-GMP", desc: "Certified Standard", icon: Award },
-    { title: "45+", desc: "Potent Formulations", icon: Microscope },
-  ];
+  const metrics = [
+  { icon: Award, title: "25+ Years", desc: "Success Journey" },
+  { icon: Briefcase, title: "CEO & Founder", desc: "Visionary Leader" },
+  { icon: Globe, title: "Global", desc: "Successful Entrepreneur" },
+  { icon: TrendingUp, title: "Direct Selling", desc: "Industry Leader" },
+];
 
   const values = [
     {
