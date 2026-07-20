@@ -283,16 +283,15 @@ export default function AboutPage() {
             financial independence and a better future.
         </p>
     </div>
-  </div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               {[
-  { icon: Award, label: "Success Journey", value: "25+ Years" },
-  { icon: Briefcase, label: "Industry", value: "Direct Selling" },
-  { icon: HeartHandshake, label: "Mission", value: "Helping Others" },
-  { icon: ShieldCheck, label: "Quality", value: "Work & Ethics" },
-].map((cred, i) => (
+                  { icon: Award, label: "Success Journey", value: "25+ Years" },
+                  { icon: Briefcase, label: "Industry", value: "Direct Selling" },
+                  { icon: HeartHandshake, label: "Mission", value: "Helping Others" },
+                  { icon: ShieldCheck, label: "Quality", value: "Work & Ethics" },
+                ].map((cred, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 p-3 rounded-2xl bg-lightBg border border-gray-100"
@@ -310,6 +309,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+         </div>  
       </section>
 
       {/* Mission, Vision, Values */}
