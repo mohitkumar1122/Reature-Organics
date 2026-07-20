@@ -327,25 +327,25 @@ const timeline = [
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                icon: Target,
-                title: "Our Mission",
-                desc: "To make authentic Ayurvedic wellness accessible to every household through clinically validated, premium-quality natural formulations.",
-                color: "from-primary to-primary-dark",
-              },
-              {
-                icon: Eye,
-                title: "Our Vision",
-                desc: "To become India's most trusted Ayurvedic brand, empowering millions to live healthier, balanced lives through nature's wisdom.",
-                color: "from-secondary to-secondary-dark",
-              },
-              {
-                icon: Heart,
-                title: "Our Promise",
-                desc: "Every product is crafted with integrity, transparency, and an unwavering commitment to your wellness journey.",
-                color: "from-primary to-secondary",
-              },
-            ].map((item, i) => (
+  {
+    icon: Target,
+    title: "Our Mission",
+    desc: "To empower people by creating opportunities, inspiring leadership, and helping individuals achieve lasting success through dedication and mentorship.",
+    color: "from-primary to-primary-dark",
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    desc: "To become a globally respected leader in the direct selling industry by transforming lives through trust, innovation, and visionary leadership.",
+    color: "from-secondary to-secondary-dark",
+  },
+  {
+    icon: Heart,
+    title: "Our Promise",
+    desc: "To lead with integrity, inspire confidence, and remain committed to helping others fulfill their dreams with honesty, ethics, and excellence.",
+    color: "from-primary to-secondary",
+  },
+].map((item, i) => (
               <div
                 key={i}
                 className="group relative bg-white p-8 rounded-3xl border border-gray-100 hover:border-primary/20 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2"
