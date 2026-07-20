@@ -21,44 +21,44 @@ export default function AboutPage() {
   { icon: TrendingUp, title: "Direct Selling", desc: "Industry Leader" },
 ];
 
-  const values = [
-    {
-      icon: Leaf,
-      title: "Authentic Ingredients",
-      desc: "We source raw herbs exclusively from pesticide-free, organic vertical farms across specialized geographical tracts.",
-      gradient: "from-primary-light to-secondary-light",
-    },
-    {
-      icon: ShieldCheck,
-      title: "GMP Certification",
-      desc: "Every formulation is packed inside WHO-GMP certified, sterile laboratories, conforming strictly to dynamic pharmacopoeial benchmarks.",
-      gradient: "from-secondary-light to-primary-light",
-    },
-    {
-      icon: Heart,
-      title: "Biocompatible & Vegan",
-      desc: "100% plant-derived capsules, gluten-free, with zero synthetic binders, magnesium stearates, or chemical preservatives.",
-      gradient: "from-primary-light to-secondary-light",
-    },
-    {
-      icon: Microscope,
-      title: "Scientific Validation",
-      desc: "Each batch undergoes rigorous HPLC testing to standardize active alkaloid concentrations for guaranteed potency.",
-      gradient: "from-secondary-light to-primary-light",
-    },
-    {
-      icon: Globe,
-      title: "Sustainable Sourcing",
-      desc: "We partner with 500+ farmers across India to support sustainable, regenerative agricultural practices.",
-      gradient: "from-primary-light to-secondary-light",
-    },
-    {
-      icon: Award,
-      title: "Award Winning",
-      desc: "Recognized by leading wellness associations for our commitment to authenticity and clinical excellence.",
-      gradient: "from-secondary-light to-primary-light",
-    },
-  ];
+ const values = [
+  {
+    icon: Target,
+    title: "Visionary Leadership",
+    desc: "Leading with a clear vision to empower people, build successful teams, and create lasting business opportunities.",
+    gradient: "from-primary-light to-secondary-light",
+  },
+  {
+    icon: TrendingUp,
+    title: "25+ Years of Excellence",
+    desc: "More than two decades of success, perseverance, and continuous growth in the direct selling industry.",
+    gradient: "from-secondary-light to-primary-light",
+  },
+  {
+    icon: Users,
+    title: "People First",
+    desc: "Committed to helping individuals achieve their goals by creating opportunities for personal and professional growth.",
+    gradient: "from-primary-light to-secondary-light",
+  },
+  {
+    icon: Globe,
+    title: "Global Entrepreneur",
+    desc: "Recognized for building a strong entrepreneurial network and inspiring leaders across different regions.",
+    gradient: "from-secondary-light to-primary-light",
+  },
+  {
+    icon: Heart,
+    title: "Trust & Integrity",
+    desc: "Building every relationship on honesty, ethics, transparency, and long-term commitment.",
+    gradient: "from-primary-light to-secondary-light",
+  },
+  {
+    icon: Award,
+    title: "Legacy of Success",
+    desc: "Dedicated to inspiring future leaders through knowledge, mentorship, and consistent achievements.",
+    gradient: "from-secondary-light to-primary-light",
+  },
+];
 
 
 const timeline = [
