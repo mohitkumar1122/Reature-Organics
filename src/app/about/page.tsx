@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import {
-  ShieldCheck, Heart, Leaf, Medal, Award, CheckCircle,
+  ShieldCheck, Heart, Leaf, Award, 
   Sparkles, Quote, Calendar, Microscope, Users, Globe,
-  TrendingUp, ArrowRight, Target, Eye, Compass, BookOpen,
-  Home, ChevronRight,  Briefcase, TrendingUp,  HeartHandshake, Mission, Helping 
+  TrendingUp, ArrowRight, Target, Eye, Compass,
+  Home, ChevronRight,  Briefcase,  HeartHandshake,
 } from "lucide-react";
 
 export const metadata = {
