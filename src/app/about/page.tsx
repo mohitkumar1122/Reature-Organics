@@ -310,7 +310,6 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* Mission, Vision, Values */}
