@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
               Agra- Mathura Bypass Road, in front of Rehmatpur Garmai, near Kamalpur, Chauraha, Aligarh, Kamalpur, Uttar Pradesh 202001
             </p>
             <p className="text-sm">
-              Email: <a href="mailto:support@reatureorganic.com" className="text-primary hover:underline font-medium">support@reatureorganic.com</a>
+              Email: <a href="Care@Reature.In" className="text-primary hover:underline font-medium">Care@Reature.In</a>
             </p>
           </div>
         </div>
