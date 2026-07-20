@@ -86,8 +86,8 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Dr. Vasudev Shastri",
-      role: "Founder & Chief Formulator",
+      name: "Yudhishthir Singh",
+      role: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=400",
       qual: "Ph.D. Dravyaguna Vijnana",
     },
