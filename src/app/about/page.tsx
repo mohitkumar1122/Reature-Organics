@@ -61,28 +61,28 @@ export default function AboutPage() {
   ];
 
 
-  const timeline = [
-    {
-      year: "2021",
-      title: "The Beginning",
-      desc: "Founded by Dr. Vasudev Shastri with a vision to bridge ancient Ayurveda with modern science.",
-    },
-    {
-      year: "2022",
-      title: "WHO-GMP Certification",
-      desc: "Achieved WHO-GMP certification for our state-of-the-art manufacturing facility in Gujarat.",
-    },
-    {
-      year: "2023",
-      title: "100+ Formulations",
-      desc: "Launched 100+ clinically validated formulations targeting comprehensive wellness conditions.",
-    },
-    {
-      year: "2024",
-      title: "Global Recognition",
-      desc: "Expanded operations to serve 10,000+ families globally with premium Ayurvedic remedies.",
-    },
-  ];
+const timeline = [
+  {
+    year: "2000",
+    title: "The Beginning",
+    desc: "Started his entrepreneurial journey with a clear vision to inspire and empower people through direct selling.",
+  },
+  {
+    year: "2010",
+    title: "Leadership Excellence",
+    desc: "Established himself as a respected leader by mentoring thousands and building successful teams across India.",
+  },
+  {
+    year: "2020",
+    title: "Global Entrepreneur",
+    desc: "Expanded his vision internationally, earning recognition as a successful global entrepreneur in the direct selling industry.",
+  },
+  {
+    year: "Present",
+    title: "25+ Years of Success",
+    desc: "Continuing to inspire future leaders with integrity, quality, and a mission to help others achieve success.",
+  },
+];
 
   const team = [
     {
