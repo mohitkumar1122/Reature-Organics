@@ -56,13 +56,13 @@ export default async function ShopPage({ searchParams }: PageProps) {
   const brands = await Product.distinct("brand");
 
   const healthConditions = [
-    "Diabetes",
-    "Immunity",
-    "Hair Fall",
-    "Skin Care",
-    "Weight Management",
+    "Metabolic Wellness",
+    "Immunity Support",
+    "Hair Wellness",
+    "Skin Health",
+    "Healthy Weight Support",
     "Digestive Health",
-    "Joint Care",
+    "Bone & Joint Health",
     "Sleep & Stress",
   ];
 
