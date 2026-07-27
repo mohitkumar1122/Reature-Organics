@@ -84,18 +84,18 @@ export default async function BlogIndexPage({ searchParams }: PageProps) {
               Wellness Insights
             </span>
             <h1 className="font-serif text-fluid-3xl font-bold leading-[1.05] mb-4 text-balance">
-              Stories That <span className="italic text-secondary">Heal</span> & Inspire
+              Evidence-Based <span className="italic text-secondary">Wellness</span> & Naturally
             </h1>
             <p className="text-base md:text-lg text-gray-200 max-w-2xl">
-              Unlock ancient wisdom validated by modern medical science — your daily dose of vitality, expertly curated.
+             Discover expert-backed articles on nutrition, herbal wellness, healthy living, and science-informed supplements to support your everyday health journey.
             </p>
 
             {/* Stats */}
             <div className="flex flex-wrap gap-6 md:gap-10 mt-8 pt-8 border-t border-white/10">
               {[
-                { value: `${blogs.length}+`, label: "Articles" },
-                { value: "12+", label: "Categories" },
-                { value: "50K+", label: "Monthly Readers" },
+                { value: `${blogs.length}+`, label: " Expert Articles" },
+                { value: "25+", label: "Wellness Topics" },
+                { value: "10K+", label: "Monthly Readers" },
               ].map((stat, i) => (
                 <div key={i}>
                   <p className="text-2xl md:text-3xl font-serif font-bold text-secondary tabular-nums">
