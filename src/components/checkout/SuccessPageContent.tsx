@@ -264,7 +264,7 @@ export default function SuccessPageContent() {
                     ReaTure Organic
                   </h3>
                   <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">
-                    Gurugram, Haryana, India
+                    Aligarh, UttarPradesh, India
                   </p>
                 </div>
               </div>
