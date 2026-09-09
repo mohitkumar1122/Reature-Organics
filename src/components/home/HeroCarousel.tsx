@@ -54,7 +54,7 @@ transition={{ duration: 0.4 }}
     <motion.div
       initial={{ scale: 1.03 }}
       animate={{ scale: 1 }}
-      transition={{ duration: 6, ease: "linear" }}
+      transition={{ duration: 4, ease: "linear" }}
       className="absolute inset-0 bg-center bg-no-repeat bg-[length:100%_100%]"
       style={{ backgroundImage: `url(${banners[currentIdx].imageUrl})` }}
     />
