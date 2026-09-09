@@ -55,7 +55,7 @@ export default function HeroCarousel({ banners }: { banners: Banner[] }) {
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 8, ease: "linear" }}
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-contain bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${banners[currentIdx].imageUrl})` }}
           />
           
