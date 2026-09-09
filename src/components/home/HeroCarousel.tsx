@@ -45,9 +45,9 @@ export default function HeroCarousel({ banners }: { banners: Banner[] }) {
   <motion.div
     key={currentIdx}
     initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.4 }}
+animate={{ opacity: 1 }}
+exit={{ opacity: 0 }}
+transition={{ duration: 0.4 }}
     className="absolute inset-0 w-full h-full"
   >
     {/* Background image with ken-burns effect */}
