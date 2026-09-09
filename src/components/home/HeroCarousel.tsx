@@ -42,22 +42,22 @@ export default function HeroCarousel({ banners }: { banners: Banner[] }) {
     >
       {/* Slides */}
       <AnimatePresence mode="wait">
-  <motion.div
-    key={currentIdx}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.4 }}
-    className="absolute inset-0 w-full h-full"
-  >
+ <motion.div
+  key={currentIdx}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.4 }}
+  className="absolute inset-0 w-full h-full"
+>
     {/* Background image with ken-burns effect */}
-    <motion.div
-      initial={{ scale: 1.03 }}
-      animate={{ scale: 1 }}
-      transition={{ duration: 6, ease: "linear" }}
-      className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: `url(${banners[currentIdx].imageUrl})` }}
-    />
+<motion.div
+  initial={{ scale: 1 }}
+  animate={{ scale: 1 }}
+  transition={{ duration: 0 }}
+  className="absolute inset-0 bg-center bg-no-repeat bg-[length:100%_100%]"
+  style={{ backgroundImage: `url(${banners[currentIdx].imageUrl})` }}
+/>
           
           {/* Multi-layer gradient overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-r from-darkText/80 via-darkText/50 to-darkText/20" />
