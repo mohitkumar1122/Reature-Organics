@@ -20,7 +20,7 @@ export default function HomeClient({
   const [quickViewProduct, setQuickViewProduct] = useState<any>(null);
 
   const sections = [
-    {
+   /* {
       products: featuredProducts,
       badge: "Recommended",
       badgeIcon: Sparkles,
@@ -30,7 +30,7 @@ export default function HomeClient({
       bgClass: "bg-gradient-to-b from-lightBg to-white",
       badgeColor: "text-primary bg-primary-light border-primary/10",
       link: "/shop?featured=true",
-    },
+    },*/
     {
       products: topSellingProducts,
       badge: "Customer Favorites",
