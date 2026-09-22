@@ -6,65 +6,164 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { getCurrentUserAction, logoutAction } from "@/app/actions/authActions";
 import {
-  Search, ShoppingBag, User, Heart, Menu, X, LogOut,
-  ChevronDown, ShieldCheck, Phone, Truck, Leaf, Package
+  Search,
+  ShoppingBag,
+  User,
+  Heart,
+  Menu,
+  X,
+  LogOut,
+  ChevronDown,
+  ShieldCheck,
+  Phone,
+  Truck,
+  Leaf,
+  Package,
+  Globe,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import logo from "@/app/assests/logo.png";
+
+interface Country {
+  code: string;
+  name: string;
+  flag: string;
+}
+
+const countries: Country[] = [
+  { code: "IN", name: "India", flag: "🇮🇳" },
+  { code: "AE", name: "UAE", flag: "🇦🇪" },
+  { code: "SA", name: "Saudi Arabia", flag: "🇸🇦" },
+  { code: "QA", name: "Qatar", flag: "🇶🇦" },
+  { code: "US", name: "United States", flag: "🇺🇸" },
+  { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
+  { code: "CA", name: "Canada", flag: "🇨🇦" },
+  { code: "AU", name: "Australia", flag: "🇦🇺" },
+  { code: "OTHER", name: "Other Countries", flag: "🌍" },
+];
 
 export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { cart } = useCart();
+
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+  const [mobileCountryOpen, setMobileCountryOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
 
+  const [selectedCountry, setSelectedCountry] = useState<Country>(
+    countries[0]
+  );
+
+  // Load saved country
+  useEffect(() => {
+    const savedCountry = localStorage.getItem("selectedCountry");
+
+    if (savedCountry) {
+      const foundCountry = countries.find(
+        (country) => country.code === savedCountry
+      );
+
+      if (foundCountry) {
+        setSelectedCountry(foundCountry);
+      }
+    }
+  }, []);
+
+  // Check logged-in user
   useEffect(() => {
     async function checkUser() {
       const user = await getCurrentUserAction();
       setCurrentUser(user);
     }
+
     checkUser();
   }, [searchParams]);
 
+  // Navbar scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown on outside click
+  // Close profile dropdown on outside click
   useEffect(() => {
-    const handleClickOutside = () => setProfileDropdownOpen(false);
-    if (profileDropdownOpen) {
+    const handleClickOutside = () => {
+      setProfileDropdownOpen(false);
+      setCountryDropdownOpen(false);
+    };
+
+    if (profileDropdownOpen || countryDropdownOpen) {
       document.addEventListener("click", handleClickOutside);
-      return () => document.removeEventListener("click", handleClickOutside);
+
+      return () =>
+        document.removeEventListener("click", handleClickOutside);
     }
-  }, [profileDropdownOpen]);
+  }, [profileDropdownOpen, countryDropdownOpen]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (searchQuery.trim()) {
-      router.push(`/shop?search=${encodeURIComponent(searchQuery.trim())}`);
+      router.push(
+        `/shop?search=${encodeURIComponent(searchQuery.trim())}`
+      );
+
       setMobileMenuOpen(false);
     }
   };
 
   const handleLogout = async () => {
     await logoutAction();
+
     setCurrentUser(null);
     setProfileDropdownOpen(false);
+
     router.push("/");
     router.refresh();
   };
 
-  const totalCartItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  // Country selection
+  const handleCountryChange = (country: Country) => {
+    setSelectedCountry(country);
+
+    // Save selected country
+    localStorage.setItem("selectedCountry", country.code);
+
+    // Close dropdowns
+    setCountryDropdownOpen(false);
+    setMobileCountryOpen(false);
+
+    /*
+      IMPORTANT:
+      Currency/payment will remain INR for now.
+
+      In the next step we can connect this selected country
+      with shipping, checkout and international payment.
+    */
+
+    // Optional refresh so other components can read the new country
+    window.dispatchEvent(
+      new CustomEvent("countryChanged", {
+        detail: country,
+      })
+    );
+  };
+
+  const totalCartItems = cart.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
 
   const navLinks = [
     { href: "/shop", label: "Shop" },
@@ -86,17 +185,26 @@ export default function Navbar() {
               <Truck className="w-3.5 h-3.5 text-secondary" />
               Free Shipping on Orders Above ₹5000
             </span>
+
             <span className="flex items-center gap-1.5">
               <Leaf className="w-3.5 h-3.5 text-secondary" />
               100% Authentic Ayurveda
             </span>
           </div>
+
           <div className="flex items-center gap-4">
-            <a href="tel:+919876543210" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
+            <a
+              href="tel:+919876543210"
+              className="flex items-center gap-1.5 hover:text-secondary transition-colors"
+            >
               <Phone className="w-3.5 h-3.5" />
-             1800 8908 121
+              1800 8908 121
             </a>
-            <Link href="/track-order" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
+
+            <Link
+              href="/track-order"
+              className="flex items-center gap-1.5 hover:text-secondary transition-colors"
+            >
               <Package className="w-3.5 h-3.5" />
               Track Order
             </Link>
@@ -116,7 +224,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between gap-6">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group shrink-0">
+            <Link
+              href="/"
+              className="flex items-center gap-2 group shrink-0"
+            >
               <div className="relative">
                 <Image
                   src={logo}
@@ -140,9 +251,12 @@ export default function Navbar() {
                   }`}
                 >
                   {link.label}
+
                   <span
                     className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-secondary to-primary transition-all duration-300 ${
-                      isActive(link.href) ? "w-6" : "w-0 group-hover:w-6"
+                      isActive(link.href)
+                        ? "w-6"
+                        : "w-0 group-hover:w-6"
                     }`}
                   />
                 </Link>
@@ -156,10 +270,15 @@ export default function Navbar() {
                 searchFocused ? "scale-[1.02]" : ""
               }`}
             >
-              <div className={`relative w-full flex items-center bg-secondary-light/50 rounded-full transition-all duration-300 ${
-                searchFocused ? "ring-2 ring-primary/30 bg-white shadow-soft" : "hover:bg-secondary-light"
-              }`}>
+              <div
+                className={`relative w-full flex items-center bg-secondary-light/50 rounded-full transition-all duration-300 ${
+                  searchFocused
+                    ? "ring-2 ring-primary/30 bg-white shadow-soft"
+                    : "hover:bg-secondary-light"
+                }`}
+              >
                 <Search className="absolute left-4 w-4 h-4 text-primary/60" />
+
                 <input
                   type="text"
                   placeholder="Search herbs, oils, supplements..."
@@ -169,6 +288,7 @@ export default function Navbar() {
                   onBlur={() => setSearchFocused(false)}
                   className="w-full pl-11 pr-24 py-2.5 bg-transparent text-sm text-darkText placeholder:text-gray-500 focus:outline-none"
                 />
+
                 <button
                   type="submit"
                   className="absolute right-1.5 px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary-dark transition-all duration-300"
@@ -180,6 +300,104 @@ export default function Navbar() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-1 sm:gap-2">
+
+              {/* Country Selector */}
+              <div
+                className="relative hidden sm:block"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    setCountryDropdownOpen(!countryDropdownOpen)
+                  }
+                  className="flex items-center gap-1.5 px-3 py-2.5 rounded-full text-sm font-semibold text-darkText hover:text-primary hover:bg-secondary-light transition-all duration-300"
+                  aria-label="Select country"
+                  aria-expanded={countryDropdownOpen}
+                >
+                  <Globe className="w-4 h-4 text-primary" />
+
+                  <span className="text-base leading-none">
+                    {selectedCountry.flag}
+                  </span>
+
+                  <span className="hidden xl:inline">
+                    {selectedCountry.name}
+                  </span>
+
+                  <ChevronDown
+                    className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
+                      countryDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {countryDropdownOpen && (
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                        scale: 0.95,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 10,
+                        scale: 0.95,
+                      }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 z-50 overflow-hidden"
+                    >
+                      <div className="px-4 py-3 border-b border-gray-100">
+                        <p className="text-sm font-bold text-darkText">
+                          Select Country
+                        </p>
+
+                        <p className="text-xs text-gray-500 mt-0.5">
+                          Choose your delivery country
+                        </p>
+                      </div>
+
+                      <div className="py-2 max-h-80 overflow-y-auto">
+                        {countries.map((country) => (
+                          <button
+                            key={country.code}
+                            type="button"
+                            onClick={() =>
+                              handleCountryChange(country)
+                            }
+                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
+                              selectedCountry.code === country.code
+                                ? "bg-primary-light text-primary font-semibold"
+                                : "text-darkText hover:bg-secondary-light"
+                            }`}
+                          >
+                            <span className="text-xl leading-none">
+                              {country.flag}
+                            </span>
+
+                            <span className="flex-1 text-left">
+                              {country.name}
+                            </span>
+
+                            {selectedCountry.code ===
+                              country.code && (
+                              <span className="text-primary font-bold">
+                                ✓
+                              </span>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               {/* Wishlist */}
               <Link
@@ -197,6 +415,7 @@ export default function Navbar() {
                 aria-label="Cart"
               >
                 <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
+
                 {totalCartItems > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
@@ -209,28 +428,57 @@ export default function Navbar() {
               </Link>
 
               {/* Profile / Auth */}
-              <div className="relative" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="relative"
+                onClick={(e) => e.stopPropagation()}
+              >
                 {currentUser ? (
                   <>
                     <button
-                      onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+                      onClick={() =>
+                        setProfileDropdownOpen(
+                          !profileDropdownOpen
+                        )
+                      }
                       className="flex items-center gap-2 p-1 pr-2 sm:pr-3 rounded-full hover:bg-secondary-light transition-all duration-300 group"
                     >
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-bold text-sm shadow-sm ring-2 ring-white">
-                        {currentUser.name.charAt(0).toUpperCase()}
+                        {currentUser.name
+                          .charAt(0)
+                          .toUpperCase()}
                       </div>
+
                       <span className="hidden md:inline text-sm font-semibold text-darkText max-w-[90px] truncate">
                         {currentUser.name.split(" ")[0]}
                       </span>
-                      <ChevronDown className={`w-4 h-4 text-gray-500 hidden md:block transition-transform duration-300 ${profileDropdownOpen ? "rotate-180" : ""}`} />
+
+                      <ChevronDown
+                        className={`w-4 h-4 text-gray-500 hidden md:block transition-transform duration-300 ${
+                          profileDropdownOpen
+                            ? "rotate-180"
+                            : ""
+                        }`}
+                      />
                     </button>
 
                     <AnimatePresence>
                       {profileDropdownOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          initial={{
+                            opacity: 0,
+                            y: 10,
+                            scale: 0.95,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                          }}
+                          exit={{
+                            opacity: 0,
+                            y: 10,
+                            scale: 0.95,
+                          }}
                           transition={{ duration: 0.2 }}
                           className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 z-50 overflow-hidden"
                         >
@@ -238,11 +486,19 @@ export default function Navbar() {
                           <div className="px-4 py-3 bg-gradient-to-br from-primary-light to-secondary-light border-b border-gray-100">
                             <div className="flex items-center gap-3">
                               <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-bold shadow-md">
-                                {currentUser.name.charAt(0).toUpperCase()}
+                                {currentUser.name
+                                  .charAt(0)
+                                  .toUpperCase()}
                               </div>
+
                               <div className="min-w-0 flex-1">
-                                <p className="text-sm font-bold text-darkText truncate">{currentUser.name}</p>
-                                <p className="text-xs text-gray-600 truncate">{currentUser.email}</p>
+                                <p className="text-sm font-bold text-darkText truncate">
+                                  {currentUser.name}
+                                </p>
+
+                                <p className="text-xs text-gray-600 truncate">
+                                  {currentUser.email}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -251,30 +507,48 @@ export default function Navbar() {
                             {currentUser.role === "admin" && (
                               <Link
                                 href="/admin"
-                                onClick={() => setProfileDropdownOpen(false)}
+                                onClick={() =>
+                                  setProfileDropdownOpen(false)
+                                }
                                 className="flex items-center gap-3 px-4 py-2.5 text-sm text-primary hover:bg-primary-light transition-colors font-semibold"
                               >
                                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                                   <ShieldCheck className="w-4 h-4" />
                                 </div>
+
                                 Admin Console
                               </Link>
                             )}
 
                             {[
-                              { href: "/dashboard", icon: User, label: "My Profile" },
-                              { href: "/dashboard/orders", icon: ShoppingBag, label: "My Orders" },
-                              { href: "/dashboard/wishlist", icon: Heart, label: "My Wishlist" },
+                              {
+                                href: "/dashboard",
+                                icon: User,
+                                label: "My Profile",
+                              },
+                              {
+                                href: "/dashboard/orders",
+                                icon: ShoppingBag,
+                                label: "My Orders",
+                              },
+                              {
+                                href: "/dashboard/wishlist",
+                                icon: Heart,
+                                label: "My Wishlist",
+                              },
                             ].map((item) => (
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                onClick={() => setProfileDropdownOpen(false)}
+                                onClick={() =>
+                                  setProfileDropdownOpen(false)
+                                }
                                 className="flex items-center gap-3 px-4 py-2.5 text-sm text-darkText hover:bg-secondary-light/60 transition-colors"
                               >
                                 <div className="w-8 h-8 rounded-lg bg-secondary-light flex items-center justify-center text-primary">
                                   <item.icon className="w-4 h-4" />
                                 </div>
+
                                 {item.label}
                               </Link>
                             ))}
@@ -287,6 +561,7 @@ export default function Navbar() {
                             <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center">
                               <LogOut className="w-4 h-4" />
                             </div>
+
                             Sign Out
                           </button>
                         </motion.div>
@@ -304,13 +579,19 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Mobile menu button */}
+              {/* Mobile Menu Button */}
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() =>
+                  setMobileMenuOpen(!mobileMenuOpen)
+                }
                 className="lg:hidden p-2.5 text-darkText hover:bg-secondary-light rounded-full transition-colors"
                 aria-label="Menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? (
+                  <X className="w-5 h-5" />
+                ) : (
+                  <Menu className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
@@ -327,23 +608,122 @@ export default function Navbar() {
               className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
             >
               <div className="px-4 pt-4 pb-6 space-y-1">
+
                 {/* Mobile Search */}
-                <form onSubmit={handleSearchSubmit} className="relative mb-4">
+                <form
+                  onSubmit={handleSearchSubmit}
+                  className="relative mb-4"
+                >
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/60" />
+
                   <input
                     type="text"
                     placeholder="Search products..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) =>
+                      setSearchQuery(e.target.value)
+                    }
                     className="w-full pl-11 pr-4 py-3 rounded-full bg-secondary-light/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   />
                 </form>
 
+                {/* Mobile Country Selector */}
+                <div className="border-b border-gray-100 pb-2 mb-2">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setMobileCountryOpen(
+                        !mobileCountryOpen
+                      )
+                    }
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-darkText hover:bg-secondary-light transition-colors"
+                  >
+                    <span className="flex items-center gap-3">
+                      <Globe className="w-5 h-5 text-primary" />
+
+                      <span className="text-xl">
+                        {selectedCountry.flag}
+                      </span>
+
+                      <span>
+                        {selectedCountry.name}
+                      </span>
+                    </span>
+
+                    <ChevronDown
+                      className={`w-4 h-4 text-gray-500 transition-transform ${
+                        mobileCountryOpen
+                          ? "rotate-180"
+                          : ""
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {mobileCountryOpen && (
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          height: "auto",
+                        }}
+                        exit={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="mt-1 rounded-xl bg-secondary-light/40 p-1">
+                          {countries.map((country) => (
+                            <button
+                              key={country.code}
+                              type="button"
+                              onClick={() =>
+                                handleCountryChange(
+                                  country
+                                )
+                              }
+                              className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-colors ${
+                                selectedCountry.code ===
+                                country.code
+                                  ? "bg-white text-primary font-semibold shadow-sm"
+                                  : "text-darkText hover:bg-white/70"
+                              }`}
+                            >
+                              <span className="text-xl">
+                                {country.flag}
+                              </span>
+
+                              <span className="flex-1 text-left">
+                                {country.name}
+                              </span>
+
+                              {selectedCountry.code ===
+                                country.code && (
+                                <span className="text-primary font-bold">
+                                  ✓
+                                </span>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Mobile Navigation Links */}
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() =>
+                      setMobileMenuOpen(false)
+                    }
                     className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                       isActive(link.href)
                         ? "bg-primary-light text-primary"
@@ -351,6 +731,7 @@ export default function Navbar() {
                     }`}
                   >
                     {link.label}
+
                     <ChevronDown className="w-4 h-4 -rotate-90" />
                   </Link>
                 ))}
@@ -358,7 +739,9 @@ export default function Navbar() {
                 {!currentUser && (
                   <Link
                     href="/auth/login"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() =>
+                      setMobileMenuOpen(false)
+                    }
                     className="flex items-center justify-center gap-2 mt-4 px-4 py-3 rounded-full text-sm font-bold bg-gradient-to-r from-primary to-primary-dark text-white shadow-md"
                   >
                     <User className="w-4 h-4" />
