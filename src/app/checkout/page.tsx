@@ -17,7 +17,11 @@ export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState<"cod" | "razorpay">("cod");
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-
+  const [selectedCountry, setSelectedCountry] = useState({
+  code: "IN",
+  name: "India",
+  flag: "🇮🇳",
+});
   // Address creation form states
   const [showAddressForm, setShowAddressForm] = useState(false);
   const [newAddress, setNewAddress] = useState({
