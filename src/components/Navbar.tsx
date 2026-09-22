@@ -32,15 +32,15 @@ interface Country {
 }
 
 const countries: Country[] = [
-  { code: "IN", name: "India", flag: "🇮🇳" },
-  { code: "AE", name: "UAE", flag: "🇦🇪" },
-  { code: "SA", name: "Saudi Arabia", flag: "🇸🇦" },
-  { code: "QA", name: "Qatar", flag: "🇶🇦" },
-  { code: "US", name: "United States", flag: "🇺🇸" },
-  { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
-  { code: "CA", name: "Canada", flag: "🇨🇦" },
-  { code: "AU", name: "Australia", flag: "🇦🇺" },
-  { code: "OTHER", name: "Other Countries", flag: "🌍" },
+  { code: "IN", name: "India", flag: "https://flagcdn.com/w40/in.png" },
+  { code: "AE", name: "UAE", flag: "https://flagcdn.com/w40/ae.png" },
+  { code: "SA", name: "Saudi Arabia", flag: "https://flagcdn.com/w40/sa.png" },
+  { code: "QA", name: "Qatar", flag: "https://flagcdn.com/w40/qa.png" },
+  { code: "US", name: "United States", flag: "https://flagcdn.com/w40/us.png" },
+  { code: "GB", name: "United Kingdom", flag: "https://flagcdn.com/w40/gb.png" },
+  { code: "CA", name: "Canada", flag: "https://flagcdn.com/w40/ca.png" },
+  { code: "AU", name: "Australia", flag: "https://flagcdn.com/w40/au.png" },
+  { code: "OTHER", name: "Other Countries", flag: "https://flagcdn.com/w40/un.png" },
 ];
 
 export default function Navbar() {
@@ -317,9 +317,12 @@ export default function Navbar() {
                 >
                   <Globe className="w-4 h-4 text-primary" />
 
-                  <span className="text-base leading-none">
-                    {selectedCountry.flag}
-                  </span>
+                 <img
+                    src={selectedCountry.flag}
+                    alt={selectedCountry.name}
+                    className="w-5 h-4 object-cover rounded-sm"
+                    loading="lazy"
+                  />
 
                   <span className="hidden xl:inline">
                     {selectedCountry.name}
@@ -377,9 +380,12 @@ export default function Navbar() {
                                 : "text-darkText hover:bg-secondary-light"
                             }`}
                           >
-                            <span className="text-xl leading-none">
-                              {country.flag}
-                            </span>
+                           <img
+                              src={country.flag}
+                              alt={country.name}
+                              className="w-6 h-4 object-cover rounded-sm"
+                              loading="lazy"
+                            />
 
                             <span className="flex-1 text-left">
                               {country.name}
@@ -641,9 +647,12 @@ export default function Navbar() {
                     <span className="flex items-center gap-3">
                       <Globe className="w-5 h-5 text-primary" />
 
-                      <span className="text-xl">
-                        {selectedCountry.flag}
-                      </span>
+                      <img
+                        src={selectedCountry.flag}
+                        alt={selectedCountry.name}
+                        className="w-6 h-4 object-cover rounded-sm"
+                        loading="lazy"
+                      />
 
                       <span>
                         {selectedCountry.name}
@@ -694,10 +703,12 @@ export default function Navbar() {
                                   : "text-darkText hover:bg-white/70"
                               }`}
                             >
-                              <span className="text-xl">
-                                {country.flag}
-                              </span>
-
+                             <img
+                                src={country.flag}
+                                alt={country.name}
+                                className="w-6 h-4 object-cover rounded-sm"
+                                loading="lazy"
+                              />
                               <span className="flex-1 text-left">
                                 {country.name}
                               </span>
