@@ -299,6 +299,11 @@ export default function CheckoutPage() {
                 </button>
               )}
             </div>
+            
+            <div className="inline-flex items-center gap-2 px-3 py-2 bg-primary-light rounded-full text-xs font-bold text-primary">
+              <span>🌍</span>
+              <span>Delivering to {selectedCountry.name}</span>
+            </div>
 
             {errorMsg && (
               <div className="p-3 bg-red-50 border border-red-100 text-red-600 rounded-2xl text-xs font-medium">
