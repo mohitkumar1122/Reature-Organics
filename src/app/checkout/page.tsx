@@ -24,42 +24,42 @@ export default function CheckoutPage() {
 });
 
     // Sync selected country from Navbar
-  useEffect(() => {
-    const countryMap: Record<
-      string,
-      { code: string; name: string; flag: string }
-    > = {
-      IN: { code: "IN", name: "India", flag: "🇮🇳" },
-      AE: { code: "AE", name: "UAE", flag: "🇦🇪" },
-      SA: { code: "SA", name: "Saudi Arabia", flag: "🇸🇦" },
-      QA: { code: "QA", name: "Qatar", flag: "🇶🇦" },
-      US: { code: "US", name: "United States", flag: "🇺🇸" },
-      GB: { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
-      CA: { code: "CA", name: "Canada", flag: "🇨🇦" },
-      AU: { code: "AU", name: "Australia", flag: "🇦🇺" },
-      OTHER: { code: "OTHER", name: "Other Countries", flag: "🌍" },
-    };
+ useEffect(() => {
+  const countryMap: Record<
+    string,
+    { code: string; name: string; flag: string }
+  > = {
+    IN: { code: "IN", name: "India", flag: "🇮🇳" },
+    AE: { code: "AE", name: "UAE", flag: "🇦🇪" },
+    SA: { code: "SA", name: "Saudi Arabia", flag: "🇸🇦" },
+    QA: { code: "QA", name: "Qatar", flag: "🇶🇦" },
+    US: { code: "US", name: "United States", flag: "🇺🇸" },
+    GB: { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
+    CA: { code: "CA", name: "Canada", flag: "🇨🇦" },
+    AU: { code: "AU", name: "Australia", flag: "🇦🇺" },
+    OTHER: { code: "OTHER", name: "Other Countries", flag: "🌍" },
+  };
 
-    const savedCountry = localStorage.getItem("selectedCountry");
+  const savedCountry = localStorage.getItem("selectedCountry");
 
-    if (savedCountry && countryMap[savedCountry]) {
-      setSelectedCountry(countryMap[savedCountry]);
+  if (savedCountry && countryMap[savedCountry]) {
+    setSelectedCountry(countryMap[savedCountry]);
+  }
+
+  const handleCountryChanged = (event: Event) => {
+    const customEvent = event as CustomEvent;
+
+    if (customEvent.detail) {
+      setSelectedCountry(customEvent.detail);
     }
+  };
 
-    const handleCountryChanged = (event: Event) => {
-      const customEvent = event as CustomEvent;
+  window.addEventListener("countryChanged", handleCountryChanged);
 
-      if (customEvent.detail) {
-        setSelectedCountry(customEvent.detail);
-      }
-    };
-
-    window.addEventListener("countryChanged", handleCountryChanged);
-
-    return () => {
-      window.removeEventListener("countryChanged", handleCountryChanged);
-    };
-  }, []);
+  return () => {
+    window.removeEventListener("countryChanged", handleCountryChanged);
+  };
+}, []);
   
   // Address creation form states
   const [showAddressForm, setShowAddressForm] = useState(false);
