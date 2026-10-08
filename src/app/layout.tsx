@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 // Body Font - Modern, Clean, Highly Readable
 const inter = Inter({
@@ -76,17 +77,20 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable}`}
     >
       <body className="antialiased min-h-screen flex flex-col bg-lightBg text-darkText font-sans">
-        <CartProvider>
-          <Suspense
-            fallback={
-              <div className="h-20 bg-white border-b border-gray-100" />
-            }
-          >
-            <Navbar />
-          </Suspense>
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </CartProvider>
+       <CartProvider>
+          <LanguageProvider>
+            <Suspense
+              fallback={
+                <div className="h-20 bg-white border-b border-gray-100" />
+              }
+        >
+                  <Navbar />
+                </Suspense>
+
+              <main className="flex-grow">{children}</main>
+           <Footer />
+      </LanguageProvider>
+  </CartProvider>
       </body>
     </html>
   );
