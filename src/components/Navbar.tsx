@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
+import { useLanguage } from "@/context/LanguageContext";
 import { getCurrentUserAction, logoutAction } from "@/app/actions/authActions";
 import {
   Search,
@@ -48,6 +49,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { cart } = useCart();
+  const { t } = useLanguage();
 
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -165,13 +167,13 @@ export default function Navbar() {
     0
   );
 
-  const navLinks = [
-    { href: "/shop", label: "Shop" },
-    { href: "/about", label: "About" },
-    { href: "/resources", label: "Resources" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
-  ];
+const navLinks = [
+  { href: "/shop", label: t("shop") },
+  { href: "/about", label: t("about") },
+  { href: "/resources", label: t("resources") },
+  { href: "/blog", label: t("blog") },
+  { href: "/contact", label: t("contact") },
+];
 
   const isActive = (href: string) => pathname === href;
 
@@ -281,7 +283,7 @@ export default function Navbar() {
 
                 <input
                   type="text"
-                  placeholder="Search herbs, oils, supplements..."
+                  placeholder={t("search")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setSearchFocused(true)}
@@ -293,7 +295,7 @@ export default function Navbar() {
                   type="submit"
                   className="absolute right-1.5 px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-full hover:bg-primary-dark transition-all duration-300"
                 >
-                  Search
+                 {t("searchButton")}
                 </button>
               </div>
             </form>
@@ -624,7 +626,7 @@ export default function Navbar() {
 
                   <input
                     type="text"
-                    placeholder="Search products..."
+                    placeholder={t("search")}
                     value={searchQuery}
                     onChange={(e) =>
                       setSearchQuery(e.target.value)
