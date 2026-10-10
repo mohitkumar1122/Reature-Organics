@@ -104,7 +104,7 @@ export function LanguageProvider({
       const selectedCode = customEvent.detail?.code;
 
       if (selectedCode && countryLanguage[selectedCode]) {
-        
+        setLanguageState(countryLanguage[selectedCode]);
       }
     };
 
