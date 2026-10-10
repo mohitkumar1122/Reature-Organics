@@ -73,6 +73,14 @@ export function LanguageProvider({
 
   useEffect(() => {
     const country = localStorage.getItem("selectedCountry");
+    const savedLanguage = localStorage.getItem("selectedLanguage") as Language | null;
+
+      if (
+        savedLanguage &&
+        ["en", "hi", "ar"].includes(savedLanguage)
+      ) {
+        setLanguageState(savedLanguage);
+      }
 
     const countryLanguage: Record<string, Language> = {
       IN: "hi",
