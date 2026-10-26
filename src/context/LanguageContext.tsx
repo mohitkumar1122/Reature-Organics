@@ -94,20 +94,6 @@ export function LanguageProvider({
       OTHER: "en",
     };
 
-    if (country && countryLanguage[country]) {
-      setLanguageState(countryLanguage[country]);
-    }
-
-    const handleCountryChanged = (event: Event) => {
-      const customEvent = event as CustomEvent;
-
-      const selectedCode = customEvent.detail?.code;
-
-      if (selectedCode && countryLanguage[selectedCode]) {
-        setLanguageState(countryLanguage[selectedCode]);
-      }
-    };
-
     window.addEventListener("countryChanged", handleCountryChanged);
 
     return () => {
