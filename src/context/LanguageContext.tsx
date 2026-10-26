@@ -71,16 +71,19 @@ export function LanguageProvider({
 }) {
   const [language, setLanguageState] = useState<Language>("en");
 
-  useEffect(() => {
-    const country = localStorage.getItem("selectedCountry");
-    const savedLanguage = localStorage.getItem("selectedLanguage") as Language | null;
 
-      if (
-        savedLanguage &&
-        ["en", "hi", "ar"].includes(savedLanguage)
-      ) {
-        setLanguageState(savedLanguage);
-      }
+useEffect(() => {
+  const savedLanguage = localStorage.getItem(
+    "selectedLanguage"
+  ) as Language | null;
+
+  if (
+    savedLanguage &&
+    ["en", "hi", "ar"].includes(savedLanguage)
+  ) {
+    setLanguageState(savedLanguage);
+  }
+}, []);
 
     const countryLanguage: Record<string, Language> = {
       IN: "hi",
@@ -104,9 +107,12 @@ export function LanguageProvider({
     };
   }, []);
 
-  const setLanguage = (newLanguage: Language) => {
-    setLanguageState(newLanguage);
-  };
+ 
+const setLanguage = (newLanguage: Language) => {
+  setLanguageState(newLanguage);
+  localStorage.setItem("selectedLanguage", newLanguage);
+};
+
 
   const t = (key: string) => {
     return translations[language][key] || key;
