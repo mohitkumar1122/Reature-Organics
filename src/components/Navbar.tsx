@@ -49,6 +49,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { cart } = useCart();
+  const { language, setLanguage, t } = useLanguage();
   const { t } = useLanguage();
 
   const [currentUser, setCurrentUser] = useState<any>(null);
