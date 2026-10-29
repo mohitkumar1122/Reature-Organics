@@ -50,7 +50,6 @@ export default function Navbar() {
   const searchParams = useSearchParams();
   const { cart } = useCart();
   const { language, setLanguage, t } = useLanguage();
-  const { t } = useLanguage();
 
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -729,6 +728,27 @@ const navLinks = [
                     )}
                   </AnimatePresence>
                 </div>
+
+                
+{/* Mobile Language Selector */}
+<div className="border-b border-gray-100 pb-3 mb-2">
+  <label className="block px-4 py-2 text-sm font-semibold text-darkText">
+    Language / भाषा / اللغة
+  </label>
+
+  <select
+    value={language}
+    onChange={(e) =>
+      setLanguage(e.target.value as "en" | "hi" | "ar")
+    }
+    className="w-full px-4 py-3 rounded-xl bg-secondary-light/50 text-sm text-darkText focus:outline-none focus:ring-2 focus:ring-primary/30"
+  >
+    <option value="en">🇬🇧 English</option>
+    <option value="hi">🇮🇳 हिंदी</option>
+    <option value="ar">🇸🇦 العربية</option>
+  </select>
+</div>
+
 
                 {/* Mobile Navigation Links */}
                 {navLinks.map((link) => (
