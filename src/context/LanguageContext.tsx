@@ -105,8 +105,11 @@ export function LanguageProvider({
   // Handle country change
   useEffect(() => {
     const handleCountryChanged = (event: Event) => {
-      const customEvent = event as CustomEvent<string>;
-      const countryCode = customEvent.detail;
+     const customEvent = event as CustomEvent<{
+      code: string;
+        }>;
+
+      const countryCode = customEvent.detail?.code;
 
       const newLanguage =
         countryLanguage[countryCode] || "en";
