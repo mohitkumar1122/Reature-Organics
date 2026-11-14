@@ -1,6 +1,11 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type Language = "en" | "hi" | "ar";
 
@@ -64,6 +69,18 @@ const translations: Record<Language, Record<string, string>> = {
   },
 };
 
+const countryLanguage: Record<string, Language> = {
+  IN: "hi",
+  AE: "ar",
+  SA: "ar",
+  QA: "ar",
+  US: "en",
+  GB: "en",
+  CA: "en",
+  AU: "en",
+  OTHER: "en",
+};
+
 export function LanguageProvider({
   children,
 }: {
@@ -71,33 +88,37 @@ export function LanguageProvider({
 }) {
   const [language, setLanguageState] = useState<Language>("en");
 
+  // Load saved language
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem(
+      "selectedLanguage"
+    ) as Language | null;
 
-useEffect(() => {
-  const savedLanguage = localStorage.getItem(
-    "selectedLanguage"
-  ) as Language | null;
+    if (
+      savedLanguage &&
+      ["en", "hi", "ar"].includes(savedLanguage)
+    ) {
+      setLanguageState(savedLanguage);
+    }
+  }, []);
 
-  if (
-    savedLanguage &&
-    ["en", "hi", "ar"].includes(savedLanguage)
-  ) {
-    setLanguageState(savedLanguage);
-  }
-}, []);
+  // Handle country change
+  useEffect(() => {
+    const handleCountryChanged = (event: Event) => {
+      const customEvent = event as CustomEvent<string>;
+      const countryCode = customEvent.detail;
 
-    const countryLanguage: Record<string, Language> = {
-      IN: "hi",
-      AE: "ar",
-      SA: "ar",
-      QA: "ar",
-      US: "en",
-      GB: "en",
-      CA: "en",
-      AU: "en",
-      OTHER: "en",
+      const newLanguage =
+        countryLanguage[countryCode] || "en";
+
+      setLanguageState(newLanguage);
+      localStorage.setItem("selectedLanguage", newLanguage);
     };
 
-    window.addEventListener("countryChanged", handleCountryChanged);
+    window.addEventListener(
+      "countryChanged",
+      handleCountryChanged
+    );
 
     return () => {
       window.removeEventListener(
@@ -107,12 +128,11 @@ useEffect(() => {
     };
   }, []);
 
- 
-const setLanguage = (newLanguage: Language) => {
-  setLanguageState(newLanguage);
-  localStorage.setItem("selectedLanguage", newLanguage);
-};
-
+  // Manually change language
+  const setLanguage = (newLanguage: Language) => {
+    setLanguageState(newLanguage);
+    localStorage.setItem("selectedLanguage", newLanguage);
+  };
 
   const t = (key: string) => {
     return translations[language][key] || key;
