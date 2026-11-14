@@ -225,7 +225,7 @@ export default function ContactPage() {
                     link: "https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA=="
                 },
                 {
-                    Icon: FaTwitter,
+                    Icon: FaXTwitter,
                     color: "bg-darkText",
                     label: "Twitter",
                     link: "https://twitter.com/ReaTureOrganics"
