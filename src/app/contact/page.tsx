@@ -216,25 +216,25 @@ export default function ContactPage() {
                     Icon: FaFacebookF,
                     color: "bg-[#1877F2]",
                     label: "Facebook",
-                    link: "https://www.facebook.com/YourPageName"
+                    link: "https://www.facebook.com/share/1BB21CGc46/"
                 },
                 {
                     Icon: FaInstagram,
                     color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]",
                     label: "Instagram",
-                    link: "https://www.instagram.com/YourUsername"
+                    link: "https://www.instagram.com/reatureofficial?igsh=MThsZ2syenBpODZ2bA=="
                 },
                 {
                     Icon: FaTwitter,
                     color: "bg-darkText",
                     label: "Twitter",
-                    link: "https://x.com/YourUsername"
+                    link: "https://twitter.com/ReaTureOrganics"
                 },
                 {
                     Icon: FaYoutube,
                     color: "bg-[#FF0000]",
                     label: "YouTube",
-                    link: "https://www.youtube.com/@YourChannel"
+                    link: "https://youtube.com/@reatureofficial?si=mmHPGY4LPGqft-nX"
                 },
               ].map((social, i) => (
                     <a
