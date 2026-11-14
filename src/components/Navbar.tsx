@@ -44,6 +44,18 @@ const countries: Country[] = [
   { code: "OTHER", name: "Other Countries", flag: "https://flagcdn.com/w40/un.png" },
 ];
 
+const countryLanguage: Record<string, "en" | "hi" | "ar"> = {
+  IN: "hi",
+  AE: "ar",
+  SA: "ar",
+  QA: "ar",
+  US: "en",
+  GB: "en",
+  CA: "en",
+  AU: "en",
+  OTHER: "en",
+};
+
 export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
@@ -135,16 +147,26 @@ export default function Navbar() {
     router.refresh();
   };
 
-  // Country selection
-  const handleCountryChange = (country: Country) => {
-    setSelectedCountry(country);
+  
+// Country selection
+const handleCountryChange = (country: Country) => {
+  // Update selected country
+  setSelectedCountry(country);
 
-    // Save selected country
-    localStorage.setItem("selectedCountry", country.code);
+  // Save selected country
+  localStorage.setItem("selectedCountry", country.code);
 
-    // Close dropdowns
-    setCountryDropdownOpen(false);
-    setMobileCountryOpen(false);
+  // Automatically change language
+  const newLanguage =
+    countryLanguage[country.code] || "en";
+
+  setLanguage(newLanguage);
+
+  // Close dropdowns
+  setCountryDropdownOpen(false);
+  setMobileCountryOpen(false);
+};
+
 
     /*
       IMPORTANT:
