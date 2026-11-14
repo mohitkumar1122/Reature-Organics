@@ -167,23 +167,6 @@ const handleCountryChange = (country: Country) => {
   setMobileCountryOpen(false);
 };
 
-
-    /*
-      IMPORTANT:
-      Currency/payment will remain INR for now.
-
-      In the next step we can connect this selected country
-      with shipping, checkout and international payment.
-    */
-
-    // Optional refresh so other components can read the new country
-    window.dispatchEvent(
-      new CustomEvent("countryChanged", {
-        detail: country,
-      })
-    );
-  };
-
   const totalCartItems = cart.reduce(
     (acc, item) => acc + item.quantity,
     0
