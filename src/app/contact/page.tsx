@@ -190,7 +190,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Saturday</span>
-                      <span className="font-bold text-darkText">10:00 AM - 4:00 PM</span>
+                      <span className="font-bold text-darkText">10:00 AM - 4:30 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Sunday</span>
@@ -210,24 +210,45 @@ export default function ContactPage() {
                 Follow Us
               </h3>
 
-              <div className="grid grid-cols-4 gap-3">
-                {[
-                  { Icon: FaFacebookF, color: "bg-[#1877F2]", label: "Facebook" },
-                  { Icon: FaInstagram, color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]", label: "Instagram" },
-                  { Icon: FaXTwitter, color: "bg-darkText", label: "Twitter" },
-                  { Icon: FaYoutube, color: "bg-[#FF0000]", label: "YouTube" },
-                ].map((social, i) => (
-                  <a
+             <div className="grid grid-cols-4 gap-3">
+              {[
+                {
+                    Icon: FaFacebookF,
+                    color: "bg-[#1877F2]",
+                    label: "Facebook",
+                    link: "https://www.facebook.com/YourPageName"
+                },
+                {
+                    Icon: FaInstagram,
+                    color: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]",
+                    label: "Instagram",
+                    link: "https://www.instagram.com/YourUsername"
+                },
+                {
+                    Icon: FaTwitter,
+                    color: "bg-darkText",
+                    label: "Twitter",
+                    link: "https://x.com/YourUsername"
+                },
+                {
+                    Icon: FaYoutube,
+                    color: "bg-[#FF0000]",
+                    label: "YouTube",
+                    link: "https://www.youtube.com/@YourChannel"
+                },
+              ].map((social, i) => (
+                    <a
                     key={i}
-                    href="#"
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
-                    className={`${social.color} text-white aspect-square rounded-2xl flex items-center justify-center hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-sm`}
-                  >
+                    className={`${social.color} text-white aspect-square rounded-2xl flex items-center justify-center hover:scale-110 hover:-rotate-6 transition-all duration-300 shadow-sm`}
+                     >
                     <social.Icon className="w-4 h-4" />
-                  </a>
+                </a>
                 ))}
               </div>
-
               <p className="text-xs text-gray-500 mt-4 text-center">
                 Connect for daily wellness tips & offers
               </p>
@@ -368,7 +389,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="tel"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 9876543210"
                           value={formData.phone}
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
