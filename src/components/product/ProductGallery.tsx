@@ -1,76 +1,95 @@
+
 "use client";
 
 import React, { useState } from "react";
 
-export default function ProductGallery({ images }: { images: string[] }) {
+export default function ProductGallery({
+  images,
+}: {
+  images: string[];
+}) {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [zoomStyle, setZoomStyle] = useState({
-    display: "none",
-    transformOrigin: "center center",
-    transform: "scale(1)",
-  });
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
 
-  const productImages = images && images.length > 0
-    ? images
-    : ["https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=600"];
+  const productImages =
+    images && images.length > 0
+      ? images.filter(Boolean).slice(0, 5)
+      : [];
+
+  if (productImages.length === 0) {
+    return (
+      <div className="w-full h-96 rounded-3xl bg-gray-50 flex items-center justify-center text-gray-400">
+        Product image not available
+      </div>
+    );
+  }
 
   const activeImage = productImages[activeIdx];
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-    // Calculate cursor percentage relative to image container bounds
-    const x = ((e.clientX - left) / width) * 100;
-    const y = ((e.clientY - top) / height) * 100;
-
-    setZoomStyle({
-      display: "block",
-      transformOrigin: `${x}% ${y}%`,
-      transform: "scale(2.2)",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setZoomStyle({
-      display: "none",
-      transformOrigin: "center center",
-      transform: "scale(1)",
-    });
-  };
-
   return (
     <div className="space-y-4">
-      
-      {/* Large Display Image with Zoom Lens */}
+
+      {/* Main Product Image */}
       <div
-        className="relative h-96 md:h-[450px] w-full rounded-3xl border border-gray-100 overflow-hidden cursor-zoom-in bg-gray-50 flex items-center justify-center"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
+        className="relative h-96 md:h-[450px] w-full rounded-3xl border border-gray-100 overflow-hidden bg-gray-50 flex items-center justify-center cursor-zoom-in"
+        onClick={() => setIsZoomOpen(true)}
       >
         <img
           src={activeImage}
-          alt="Product details zoom view"
-          className="w-full h-full object-cover transition-transform duration-75"
-          style={{
-            transform: zoomStyle.transform,
-            transformOrigin: zoomStyle.transformOrigin,
-          }}
+          alt="Product image"
+          className="w-full h-full object-contain p-3 transition-transform duration-300 hover:scale-105"
         />
+
+        <span className="absolute bottom-4 right-4 bg-white/90 rounded-full px-3 py-2 text-xs text-gray-600 shadow-sm">
+          <span>Click to zoom</span>
+        </span>
       </div>
 
-      {/* Thumbnails slider */}
+      {/* Product Thumbnails */}
       {productImages.length > 1 && (
-        <div className="flex flex-wrap gap-3">
+        <div className="flex gap-3 overflow-x-auto pb-2">
           {productImages.map((img, idx) => (
             <button
               key={idx}
+              type="button"
               onClick={() => setActiveIdx(idx)}
-              className={`w-20 h-20 rounded-2xl overflow-hidden border-2 bg-gray-50 transition-all ${
-                activeIdx === idx ? "border-primary shadow-sm" : "border-gray-200/50 hover:border-gray-300"
+              className={`flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-2 bg-gray-50 transition-all ${
+                activeIdx === idx
+                  ? "border-green-600 shadow-md"
+                  : "border-gray-200 hover:border-gray-400"
               }`}
             >
-              <img src={img} alt="Product thumbnail" className="w-full h-full object-cover" />
+              <img
+                src={img}
+                alt={`Product thumbnail ${idx + 1}`}
+                className="w-full h-full object-contain p-1"
+              />
             </button>
           ))}
+        </div>
+      )}
+
+      {/* Full Screen Image Zoom */}
+      {isZoomOpen && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setIsZoomOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setIsZoomOpen(false)}
+            className="absolute top-5 right-5 text-white text-3xl"
+            aria-label="Close image zoom"
+          >
+            &times;
+          </button>
+
+          <img
+            src={activeImage}
+            alt="Zoomed product"
+            className="max-w-full max-h-[90vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
 
