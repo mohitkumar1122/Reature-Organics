@@ -215,7 +215,7 @@ const timeline = [
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/20 rounded-3xl -z-10" />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-3xl -z-10" />
 
-            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-large">
+            <div className="relative h-[650px] w-full rounded-3xl overflow-hidden shadow-large">
               <img
                 src="https://res.cloudinary.com/mjd0pqh1/image/upload/sir_ji_new_photo_y4jkjf.png"
                 alt="Founder of ReaTure Organic"
